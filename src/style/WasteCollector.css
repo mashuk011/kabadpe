@@ -1,0 +1,96 @@
+
+
+/* _____________--css code */
+
+.record-grid2{
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.tbledataactive{
+    background-color: #2f7377;
+    color: #fff !important;
+}
+
+.tbledatadeactive{
+    background: rgb(153, 150, 150);
+    color: #fff !important;
+}
+
+.my-account-det-form-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+    row-gap: 2rem;
+}
+
+.account-form-two-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    row-gap: 2rem;
+    margin-block: 1.5rem;
+}
+
+.bankacct-btn{
+    width: 10rem;
+}
+
+.right-tabs-bx{
+    display: grid;
+    place-items: center;
+
+}
+
+.prof-table-main-bx-waste-collec-tble table tbody tr td:nth-child(4),
+
+.prof-table-main-bx-waste-collec-tble table tbody tr td:nth-child(5){
+    border-right: none;
+
+}
+
+
+.prof-table-main-bx-waste-collec-tble table tbody tr td:last-child{
+    border-right: .1rem solid #0e4e51;
+}
+
+.prof-table-main-bx-waste-collec-tble table thead tr th:last-child{
+    border-right: none;
+}
+
+
+.prof-table-main-bx-waste-collec-tble table tbody tr td:nth-child(1) 
+{
+    width: 16.76rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.prof-table-main-bx-waste-collec-tble table thead tr th:nth-child(1){
+    width: 15rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.prof-table-main-bx-waste-collec-tble table tbody tr td ,
+
+.prof-table-main-bx-waste-collec-tble table thead tr th{
+    text-align: center !important;
+    justify-content: center !important;
+}
+
+
+@media all and (min-widht: 320px) and (max-width: 800px){
+
+    .prof-table-main-bx-waste-collec-tble table tbody tr td:nth-child(1) 
+{
+    width:100%;
+}
+
+.prof-table-main-bx-waste-collec-tble table thead tr th:nth-child(1){
+    width:100%;
+
+}
+    
+}

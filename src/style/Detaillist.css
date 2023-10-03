@@ -1,0 +1,245 @@
+
+
+.service-Det-text{
+    position: absolute;
+    bottom: 2rem;
+    left: 5rem;
+    z-index: 11;
+}
+
+.service-Det-text h3{
+    font-size: 4rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.what-we-do-comp{
+    position: relative;
+    width: 100%;
+    padding-block: 5rem;
+    padding-inline: 1.7rem;
+    background-color: #f4feff;
+}
+
+.what-we-do-container{
+    position: relative;
+    max-width: 85rem;
+    margin: 0 auto;
+}
+
+.wht-we-do-grid{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    column-gap: 5rem;
+    row-gap: 4rem;
+}
+
+.left-what-we-do-main-bx{
+    position: relative;
+    width: 100%;
+
+}
+
+.left-what-we-do-main-bx p{
+    font-size: 1.3rem;
+    line-height: 1.7;
+    color: #083335;
+    margin-bottom: 2.5rem;
+
+}
+
+.what-we-do-main-bx h2{
+    font-size: 2.4rem;
+
+}
+
+.wht-we-do-list{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .65rem;
+}
+
+.wt-we-do-li{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.45rem;
+}
+
+.numb-bx{
+    position: relative;
+   width: 8rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background-color: #083335;
+    color: #fff;
+    border: .05rem solid #083335;
+    font-size: 1.3rem;
+    
+}
+
+.wt-we-do-info p span{
+    font-weight: 700;
+    color: #083335;
+    font-size: 1.5rem;
+}
+
+.other-service-bx{
+    position: relative;
+    padding: 2rem 2rem;
+    background-color: #083335;
+    border: .1rem solid #089411;
+    width: 100%;
+    height: max-content;
+    border-radius: 1rem;
+
+}
+
+.other-service-bx h4{
+    font-size: 1.56rem;
+    letter-spacing: 1px;
+    font-weight: 800;
+    color: #fff;
+    padding-bottom: .5rem;
+    border-bottom: .1rem solid #1c898d;
+}
+
+.ot-serv-list{
+    margin-top: 1rem;
+}
+
+.ot-serv-list li{
+    padding: .4rem ;
+}
+
+.ot-serv-list li a{
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 500;
+    transition: 500ms ease;
+}
+
+.ot-serv-list li a:hover , .ot-serv-list li a.servactive{
+    color: #1c898d;
+}
+
+.key-benf-main-bx{
+    margin-top: 1rem;
+}
+
+.key-benf-main-bx h3{
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #083335;
+    margin-bottom: 2.5rem;
+}
+
+.k-ben-bx{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.56rem;
+}
+
+.k-ben-bx svg{
+    position: relative;
+    background-color: #083335;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #1c898d;
+
+}
+
+.k-ben-bx h6{
+    font-size: 1.3rem;
+    color: #083335;
+    font-weight: 500;
+}
+
+.k-ben-bx h6 span{
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding-right: .45rem;
+}
+
+@media all and (min-width : 767px) and (max-width: 1024px){
+
+    .other-service-bx{
+        display: none;
+    }
+
+    .wht-we-do-grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+   
+    
+}
+
+@media all and (min-width : 320px) and (max-width: 767px){
+
+    .other-service-bx{
+        display: none;
+    }
+
+    .wht-we-do-grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .numb-bx{
+        height: 5rem;
+        font-size: 1.78rem;
+        width: 6.5rem;
+    }
+
+    .wt-we-do-info p , .left-what-we-do-main-bx p , .k-ben-bx h6{
+        font-size: 1.78rem;
+    }
+
+    .wt-we-do-info p span , .k-ben-bx h6 span{
+        font-size: 2rem;
+    }
+
+    .wt-we-do-li{
+        display: flex;
+    }
+
+    .wt-we-do-info{
+        max-width: 50rem;
+        width: 100%;
+    }
+
+    .service-Det-text{
+        bottom: 1rem;
+        left: 1rem;
+    }
+
+    .service-Det-text h3{
+        font-size: 3rem;
+    }
+
+    .k-ben-bx h6{
+        max-width: 40rem;
+        width: 100%;
+    }
+
+    .k-ben-bx svg{
+        width: 7rem;
+        height: 6rem;
+    }
+    
+}
