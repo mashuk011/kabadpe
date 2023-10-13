@@ -158,7 +158,7 @@ const WastecollectorPage = () => {
             <div className="logo float-left">
                 <NavLink to="index.html" className="img-responsive">
                     {/* <img src="assets/images/resources/sticky-logo.png" alt="" title=""> */}
-                    <img src="../public/images/resources/sticky-logo.png" alt="" />
+                    <img src="./images/resources/sticky-logo.png" alt="" />
                 </NavLink>
             </div>
             {/* <!--Right Col--> */}

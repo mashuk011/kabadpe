@@ -45,8 +45,8 @@ const Header = () => {
                                     <li>
                                         <div className="icon">
                                             {/* <img src="assets/images/customImg/game.png"> */}
-                                            <img src="../public/images/customImg/game.png" alt="" />
-                                            <img src="../public/images/customImg/app-store.png" alt="" />
+                                            <img src="./images/customImg/game.png" alt="" />
+                                            <img src="./images/customImg/app-store.png" alt="" />
                                             {/* <img src="assets/images/customImg/app-store.png"> */}
                                         </div>
                                         <div className="text"> 
@@ -75,7 +75,7 @@ const Header = () => {
                                 <div className="main-logo-box">
                                     <a href="index.html">
                                         {/* <img src="assets/images/resources/logo.png" alt="Awesome Logo" title=""> */}
-                                        <img src="../public/images/resources/logo.png" alt="" />
+                                        <img src="./images/resources/logo.png" alt="" />
                                     </a>
                                 </div>
                             </div>
@@ -161,7 +161,7 @@ const Header = () => {
                                                 <p><a href="#">Contact now</a></p>
                                             </div></li>
                                         <li><NavLink to="/wastegept"><span>Wastegpt</span></NavLink></li>
-                                        <li><NavLink to="/rate"><span>Rate list</span></NavLink></li>
+                                        <li><NavLink to="/ratelist"><span>Rate list</span></NavLink></li>
                                         <li><NavLink to="/kabadshop"><span>Kabad Shop</span></NavLink></li>
                                         <li><NavLink to="/account"><span>My Account</span></NavLink></li>
 

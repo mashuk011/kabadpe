@@ -1,0 +1,155 @@
+
+/* _________________________
+  Our RateList Styling css code
+  ------------------------------------ */
+
+  .ratelist-comp{
+    position: relative;
+    width: 100%;
+    padding-inline: 1.78rem;
+    padding-block: 3rem;
+
+  }
+
+  .ratelist-container{
+    position: relative;
+    max-width: 85rem;
+    margin: 0 auto;
+  }
+
+  .ratelist-table-grid{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 3rem;
+    row-gap: 3rem;
+  }
+
+  .ratelist-table-bx{
+    position: relative;
+    width: 100%;
+    white-space: nowrap;
+    border-collapse: collapse;
+    
+  }
+
+  .ratelist-table-bx table{
+    position: relative;
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+
+  }
+
+  .ratelist-table-bx table 
+
+  
+
+  .ratelist-table-bx table thead{
+    position: relative;
+    width: 100%;
+  }
+
+  .ratelist-table-bx table thead tr th{
+    padding: .87rem .3rem;
+    /* background-color: #073940;  2f7377*/
+    background-color: #0e4e51;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #fff;
+    border: .1rem solid #0e4e51;
+
+  }
+
+  
+  .ratelist-table-bx table tbody{
+    position: relative;
+    width: 100%;
+  }
+
+
+    .ratelist-table-bx table tbody tr td{
+        padding: .65rem 1.3rem;
+        border-right: .1rem solid #2f7377;
+        text-align: left;
+        font-size: 1rem;
+        color: #575656;
+        letter-spacing: 1px;
+    }
+
+    .ratelist-table-bx table tbody tr:nth-child(2n + 1){
+
+        background-color: #eeeeeeda;
+        
+    }
+
+    
+    .ratelist-table-bx table tbody tr td:first-child{
+        border-left: .1rem solid #2f7377;
+    }
+
+    .waste-prod-bx{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2rem;
+    }
+
+    .waste-prod-bx h6{
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+
+    .waste-prod-img{
+        position: relative;
+        width: 2.6rem;
+      }
+    
+  .waste-prod-img img{
+    width: 100%;
+    height: auto;
+  }
+
+  .ratelist-table-bx{
+   height: 32rem;
+   overflow-y: auto;
+  }
+
+  .ratelist-table-bx::-webkit-scrollbar{
+    width: .16rem;
+    height: .16rem;
+    border-radius: 5rem;
+    background-color: transparent;
+  }
+
+  .ratelist-table-bx table tbody tr:last-child{
+    border-bottom: .1rem solid #2f7377;
+  }
+
+  .ratelist-table-bx table tbody tr td:nth-child(3){
+    text-align: right;
+  }
+
+  .user-prof-comp5{
+    height: 12rem;
+  }
+
+  .user-prof-comp5 h2{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 99;
+    font-weight: 500;
+    font-size: 3rem;
+    color: #fff;
+    letter-spacing: 1.87px;
+  }
+
+  .image-container img{
+    width: 3rem;
+  }

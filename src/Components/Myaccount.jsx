@@ -27,7 +27,7 @@ const Myaccount = () => {
         <div className="user-prof-contanier">
           <div className="user-prf-main">
             <div className="user-img">
-              <img src="../public/images/customImg/user-prf-img.webp" alt="" />
+              <img src="./images/customImg/user-prf-img.webp" alt="" />
             </div>
             <div className="user-prf-info">
               <h4>Tom Holland</h4>
@@ -770,7 +770,7 @@ const Myaccount = () => {
                   <div className="offer-main-bx">
                     <div className="offer-img">
                       <img
-                        src="../public/images/customImg//offer-1.jpg"
+                        src="./images/customImg//offer-1.jpg"
                         alt=""
                       />
                     </div>
@@ -800,7 +800,7 @@ const Myaccount = () => {
                   <div className="offer-main-bx">
                     <div className="offer-img">
                       <img
-                        src="../public/images/customImg//offer-2.jpg"
+                        src="./images/customImg//offer-2.jpg"
                         alt=""
                       />
                     </div>
@@ -830,7 +830,7 @@ const Myaccount = () => {
                   <div className="offer-main-bx">
                     <div className="offer-img">
                       <img
-                        src="../public/images/customImg//offer-3.jpg"
+                        src="./images/customImg//offer-3.jpg"
                         alt=""
                       />
                     </div>
@@ -860,7 +860,7 @@ const Myaccount = () => {
                   <div className="offer-main-bx">
                     <div className="offer-img">
                       <img
-                        src="../public/images/customImg//offer-2.jpg"
+                        src="./images/customImg//offer-2.jpg"
                         alt=""
                       />
                     </div>
@@ -890,7 +890,7 @@ const Myaccount = () => {
                   <div className="offer-main-bx">
                     <div className="offer-img">
                       <img
-                        src="../public/images/customImg//offer-3.jpg"
+                        src="./images/customImg//offer-3.jpg"
                         alt=""
                       />
                     </div>
@@ -920,7 +920,7 @@ const Myaccount = () => {
                   <div className="offer-main-bx">
                     <div className="offer-img">
                       <img
-                        src="../public/images/customImg//offer-1.jpg"
+                        src="./images/customImg//offer-1.jpg"
                         alt=""
                       />
                     </div>

@@ -1,0 +1,336 @@
+
+/* _____________________________ 
+Our Login Registration CSS code styling 
+------------------------------------------------ */
+
+.log-regist-comp{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 5;
+}
+
+
+.log-reg-grid{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 3rem;
+    row-gap: 3rem;
+}
+
+.left-log-reg-form-grid-bx{
+    position: relative;
+    /* min-width: 32rem; */
+    width: calc(100% - 66%);
+    height: 100%;
+    padding-block: 3rem;
+    padding-inline: 3rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 5;
+}
+
+.login-form-bx{
+    position: relative;
+    width: 100%;
+}
+
+ .login-logo{
+    position: relative;
+    width: 16rem;
+    margin: 0 auto 0 auto;
+ }
+
+ .login-logo img{
+    width: 100%;
+    height: auto;
+ }
+
+ .login-form-bx form{
+    width: 100%;
+ }
+
+ .log-inpt-bx{
+    position: relative;
+    width: 100%;
+    height: 3rem;
+    margin-bottom: 1rem;
+    transition: 600ms ease;
+
+ }
+
+
+
+ .log-inpt-bx input{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border-bottom: .1rem solid #e3e1e1;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #000;
+ }
+
+ .log-inpt-bx input::placeholder{
+    color: #8b8b8b;
+    letter-spacing: .5px;
+ }
+
+ .login-form-bx .f-p-link{
+    text-align: center;
+    display: block;
+    color: #2ac4c8;
+    transition: 500ms ease;
+ }
+
+ .login-form-bx .f-p-link:hover{
+    color: #14a3a8;
+ }
+
+ .form-submit-btn{
+    position: relative;
+    width: 100%;
+    margin-top: 1rem;
+    height: 3.2rem;
+    background-color: #14a3a8;
+    border-radius: .3rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+    color: #fff;
+ }
+
+ .login-form-bx p{
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: .5px;
+    color: #414141;
+    font-weight: 400;
+ }
+
+
+
+ .right-forgot-password-form-bx{
+    position: relative;
+    width: calc(100% - 66%);
+    height: 100%;
+    z-index: 5;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    padding-block: 3rem;
+    padding-inline: 3rem;
+ }
+
+ .reg-inpt-bx{
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+
+}
+
+
+.log-regst-form.registformactive .reg-inpt-bx{
+    /* animation: showinpt .5s ease forwards; */
+    height: 3rem;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.log-regst-form.registformactive .reg-inpt-bx:nth-child(1){
+    margin-top: 2rem;
+}
+/* 
+@keyframes showinpt {
+    0%{
+        height: 0;
+    }
+    100%{
+        height: 3rem;
+    }
+} */
+
+.switch-form-btn{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+
+}
+
+.switch-form-btn button{
+    color: #2ac4c8;
+    font-weight: 500;
+    transition: 500ms ease;
+}
+
+
+
+ .switch-form-btn button:hover{
+    color: #14a3a8;
+ }
+
+ .form-check{
+    display: none !important;
+ }
+ 
+ .form-check-label{
+    font-size: .87rem;
+ }
+
+ .form-check{
+    align-items: flex-start !important;
+ }
+
+ .form-check input{
+    margin-top: .4rem;
+ }
+
+ .forgt-passwrd-check-bx-flex p{
+    font-size: 1rem;
+    color: #2ac4c8;
+    margin: 0 0 !important;
+ }
+
+ .log-regst-form.registformactive .form-check{
+    display: flex !important;
+    animation: showsmooth .7s ease forwards;
+    opacity: 0;
+ }
+
+ @keyframes showsmooth {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+ }
+
+ .log-regst-form.registformactive .forgt-passwrd-check-bx-flex p{
+    display: none !important;
+    animation: showsmooth1 .7s ease forwards ;
+    opacity: 0;
+ }
+
+ @keyframes showsmooth1 {
+    0%{
+        opacity: 0;
+    }
+
+
+    100%{
+        opacity: 1;
+    }
+ }
+
+ .thanks_para p{
+    text-align: left ;
+    font-size: .94rem;
+    color: rgb(8, 102, 8);
+    font-weight: 500;
+
+ }
+
+ .forgot-text p{
+    text-align: left;
+    color: rgb(12, 150, 12);
+ }
+
+ .log-forgot-passwrd-inpt-bx{
+    margin-block: 1.5rem;
+ }
+
+ .forgot-pass-btn{
+    cursor: pointer;
+ }
+
+ .log-regist-comp:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 66.5%;
+    height: 100%;
+    background: url('../images/customImg/login-bg.jpg')no-repeat center center/cover;
+    z-index: 10;
+    transition: 700ms ease;
+    transform: translateX(51%);
+ }
+
+ .log-regist-comp.maincompactive:before{
+    transform: translateX(0%);
+
+ }
+
+ .switch-form-btn p:last-of-type{
+    cursor: pointer;
+    color: #2ac4c8;
+    font-weight: 500;
+ }
+
+
+
+ /* _____________________ 
+ Our new Reset Passwrd  comp css code  Starts here 
+ ________________________________________-----------------*/
+
+ .reset-passwrd-comp{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+ }
+
+ .reset-passwrd-grid{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1.2fr 2.5fr;
+ }
+
+ .left-reset-passwrd-grid-bx{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    flex-direction: column;
+    padding-block: 3rem;
+    padding-inline: 2.87rem;
+ }
+
+ .switch-form-btn2 p:first-of-type{
+    color: #7c7c7c;
+    font-weight: 400;
+    letter-spacing: .7px;
+ }
+
+ .switch-form-btn2 a{
+    color: #2ac4c8;
+ }
+
+.right-reset-passwrd-grid-bx{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url('../images/customImg/login-bg.jpg')no-repeat center center/cover;
+}

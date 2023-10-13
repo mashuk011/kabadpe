@@ -5,20 +5,21 @@ import Service from './Pages/Service';
 import Wastgept from './Pages/Wastgept';
 import Rate from './Pages/Rate';
 import KabadShop from './Pages/KabadShop';
-import Footer from './Components/Footer';
 import './App.css';
 import Account from './Pages/Account';
 import WastecollectorPage from './Pages/WastecollectorPage';
-import Header from './Components/Header';
+import LogReg from './Pages/LogReg';
+import ResetPassword from './Pages/ResetPassword';
+import RateList from './Pages/RateList';
+import PricelistPage from './Pages/PricelistPage';
 
 function App() {
 
   return (
     <>
-    
     <BrowserRouter>
-    <Header />
     <Routes>
+    <Route index element={<Home/>} />
       <Route path='/' element={<Home/>} />
       <Route path='/service' element={<Service/>} />
       <Route path='/about' element={<About/>} />
@@ -27,11 +28,12 @@ function App() {
       <Route path='/kabadshop' element={<KabadShop/>} />
       <Route path='/account' element={<Account/>} />
       <Route path='/wastecollector' element={<WastecollectorPage/>} />
-
-
+      <Route path='/loginregist' element={<LogReg/>} />
+      <Route path='/resetpasswrd' element={<ResetPassword/>} />
+      <Route path='/ratelist' element={<RateList/>} />
+      <Route path='/pricelist' element={<PricelistPage/>} />
 
     </Routes>
-    <Footer />
     </BrowserRouter>
       
     </>

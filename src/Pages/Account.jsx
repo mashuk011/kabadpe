@@ -25,7 +25,7 @@ const Account = () => {
                     <div className="main-logo-box">
                         <NavLink to="/">
                             {/* <img src="assets/images/resources/logo.png" alt="Awesome Logo" title=""> */}
-                            <img src="../public/images/resources/logo.png" alt="" />
+                            <img src="./images/resources/logo.png" alt="" />
                         </NavLink>
                     </div>
                 </div>

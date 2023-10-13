@@ -10,7 +10,7 @@ const Aboutoffer = () => {
             <div className="left-about-main-img">
               <div className="about-offer-img">
                 <img
-                  src="../public/images/customImg/about-style3-img.jpg"
+                  src="./images/customImg/about-style3-img.jpg"
                   alt=""
                 />
               </div>

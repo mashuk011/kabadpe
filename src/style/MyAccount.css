@@ -5,8 +5,9 @@
     width: 100%;
     height: 18rem;
     background-color: #0e4e51;
-    z-index: 11;
+    z-index: 99;
     overflow: hidden;
+
 }
 
 
@@ -77,10 +78,10 @@
 .user-prof-main-bx{
     position: relative;
     width: 100%;
-    margin-block-end: 5rem;
+    z-index: 999;
 }
 
-.user-prf-main{
+/* .user-prf-main{
     position: relative;
     display: flex;
     align-items: center;
@@ -120,12 +121,73 @@
 .user-prf-info p{
     font-size: 1.2rem;
     max-width: 50rem;
+} */
+
+/* New css code for user prof and record sec -------------
+____________________________________ */
+
+.prof-record-main-sect{
+    position: relative;
+    width: 100%;
+    padding-block: 2rem;
+    padding-inline: 1.7rem;
+    
+}
+
+.prof-record-grid{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.5fr 3fr;
+    column-gap: 3rem;
+    row-gap: 3rem;
+}
+
+.main-container{
+    max-width: 80rem;
+    margin: 0 auto;
 }
 
 
-.user-prof-contanier{
+.user-prof-contanier2{
     max-width: 80rem;
     margin: 0 auto;
+}
+
+
+.user-prf-main{
+    position: relative;
+    width: 100%;
+    padding: 1.5rem 1.3rem 1rem 1.3rem;
+    background-color: transparent;
+    border: .1rem solid #eee;
+}
+
+.user-img{
+    position: relative;
+    width: 5rem;
+    margin: 0 auto 2rem auto;
+    
+}
+
+.user-img img{
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.user-prf-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.user-prf-info p{
+    font-size: 1rem;
+    margin-top: .7rem;
+    margin-bottom: 0;
 }
 
 .user-prf-switch-btns-flex{
@@ -161,14 +223,12 @@
 .records-comp{
     position: relative;
     width: 100%;
-    margin-top: 2rem;
-    padding-block: 2rem;
 }
 
 .record-grid{
     position: relative;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     column-gap: 2rem;
     row-gap: 3rem;
     width: 100%;
@@ -195,8 +255,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    border: .1rem solid #1c898d;
-    opacity: 0.5;
+    border: .1rem solid #eee;
+    opacity: 1;
     z-index: -1;
 }
 
@@ -237,13 +297,16 @@
 }
 
 .record-bx h6{
-    font-size: 1rem;
+    font-size: .87rem;
     font-weight: 500;
     letter-spacing: 1px;
+    text-align: center;
+
 }
 
 .record-bx h6 span{
     color: #0e4e51;
+    text-align: center;
 }
 
 
@@ -254,7 +317,7 @@
   .my-profile-comp{
     position: relative;
     width: 100%;
-    padding-block: 5rem;
+    padding-block: 2rem;
     padding-inline: 1.7rem;
     background-color: #effcfd;
   }
@@ -329,7 +392,7 @@
     position: relative;
     width: 100%;
     background-color: #fff;
-    padding: 4rem 2.5rem;
+    padding: 2rem 2.5rem;
  
   }
 
@@ -556,7 +619,7 @@
 .table-parent-bx{
     position: relative;
     width: 100%;
-    padding: 3rem 2rem;
+    padding: 2rem 2rem;
     background-color: #fff;
 }
 
@@ -591,10 +654,10 @@
 
 .prof-table-main-bx table thead tr , .prof-table-main-bx table tbody tr{
     width: 100%;
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: space-between;
-    text-align: left;
+    text-align: left; */
 
 }
 
@@ -604,7 +667,7 @@
     font-weight: 500;
     letter-spacing: 1px;
     text-align: left;
-    width: 100%;
+    /* width: 100%; */
     padding: .76rem 1rem;
     border-right: .1rem solid #2f7377;
     line-height: 1.7;
@@ -617,15 +680,15 @@
     font-weight: 500;
     letter-spacing: 1px;
     text-align: left;
-    width: 100%;
+    /* width: 100%; */
     padding: .3rem 1rem;
     border-bottom: .1rem solid #2f7377;
     border-left: .1rem solid #2f7377;
     transition: 500ms ease;
     cursor: pointer;
-    display: flex;
+    /* display: flex;
     align-items: center;
-    gap: .5rem;
+    gap: .5rem; */
 
 }
 
@@ -639,14 +702,14 @@
     transition: 500ms ease;
 }
 
-.prof-table-main-bx table tbody tr td:hover .inv-icon i{
+/* .prof-table-main-bx table tbody tr td:hover .inv-icon i{
     color: #fff;
 }
 
 .prof-table-main-bx table tbody tr td:hover{
     background-color: #2f7377;
     color: #fff;
-}
+} */
 
 .prof-table-main-bx table tbody tr td:nth-child(4),.prof-table-main-bx table tbody tr td:nth-child(5){
     border-right: .1rem solid #2f7377;
