@@ -3,7 +3,7 @@ const Home = () => {
   useEffect(() => {}, []);
   return (
     <>
-      <div onClick={() => console.log(Env.KEY)}>hello world</div>
+      <div onClick={() => console.log(ENV)}>hello world</div>
     </>
   );
 };
