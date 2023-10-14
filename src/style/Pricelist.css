@@ -29,7 +29,6 @@
     width: 100%;
     height: 100%;
     background-color: transparent;
-    background-color: #eee;
     text-transform: capitalize;
     cursor: pointer;
  }
@@ -53,7 +52,7 @@
 
  .inpt-weight-bx{
     position: relative;
-    width: 50%;
+    width: 5rem;
     margin: 0 auto;
  }
 
@@ -64,6 +63,10 @@
     font-size: 1rem;
     font-weight: 400;
     letter-spacing: 1px;
+ }
+
+ .inpt-weight-bx input::placeholder{
+   text-align: center;
  }
 
  .pricelist-table-bx{

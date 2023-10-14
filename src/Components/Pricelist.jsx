@@ -79,7 +79,9 @@ const Pricelist = () => {
   };
 
   const deleteStaticRow = () => {
-    const newData =  setDataTable
+    const newData =  [...dataTable];
+    newData.pop();
+    setDataTable(newData);
 
     
   }
@@ -444,7 +446,7 @@ const Pricelist = () => {
                 {dataTable.map((index) => {
                   return (
                     <tr>
-                      <td>1</td>
+                      <td>{index}</td>
                       <td>
                         <div className="product-select-bx">
                           <div className="prod-img image-container">
@@ -481,7 +483,7 @@ const Pricelist = () => {
                             id={index}
                             value={weightValue}
                             onChange={handleWeightValue}
-                            placeholder="weight"
+                            placeholder="----"
                           />
                         </div>
                       </td>
@@ -578,16 +580,16 @@ const Pricelist = () => {
           <div className="subtotal-bx">
             <h5>SubTotal</h5>
             <div className="total-amount-bx">
-              <h6>Total Amount : </h6>
-              <p>
-                {" "}
+            <p>
                 <td>
                   <p className="amount-text">
                     {/* {productPrice[selectedValue] * weightValue} */}
-                    2000
+                    2000 <span>:</span>
                   </p>
                 </td>
               </p>
+              <h6>Total Amount  </h6>
+              
             </div>
           </div>
         </div>
