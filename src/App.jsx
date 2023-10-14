@@ -16,9 +16,7 @@ import PricelistPage from './Pages/PricelistPage';
 function App() {
 
   return (
-    <BrowserRouter>
     <Routes>
-    <Route index element={<Home/>} />
       <Route path='/' element={<Home/>} />
       <Route path='/service' element={<Service/>} />
       <Route path='/about' element={<About/>} />
@@ -27,13 +25,11 @@ function App() {
       <Route path='/kabadshop' element={<KabadShop/>} />
       <Route path='/account' element={<Account/>} />
       <Route path='/wastecollector' element={<WastecollectorPage/>} />
-      <Route path='/loginregist' element={<LogReg/>} />
+      <Route path='/auth' element={<LogReg/>} />
       <Route path='/resetpasswrd' element={<ResetPassword/>} />
       <Route path='/ratelist' element={<RateList/>} />
       <Route path='/pricelist' element={<PricelistPage/>} />
-
     </Routes>
-    </BrowserRouter>
   )
 }
 

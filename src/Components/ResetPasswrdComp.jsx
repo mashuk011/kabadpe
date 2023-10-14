@@ -69,7 +69,7 @@ const ResetPasswrdComp = () => {
 
                 <div className="switch-form-btn switch-form-btn2">
                   <p>New to Kabadpe? </p>
-                  <NavLink to="/loginregist">Log In</NavLink>
+                  <NavLink to="/auth">Log In</NavLink>
                 </div>
               </form>
             </div>
