@@ -1,11 +1,11 @@
-import React from 'react'
-
+import React, { useEffect } from "react";
 const Home = () => {
+  useEffect(() => {}, []);
   return (
     <>
-      hello world
+      <div onClick={() => console.log(Env.KEY)}>hello world</div>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
