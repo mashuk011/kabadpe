@@ -236,7 +236,7 @@ const Ratelistcomp = () => {
             <div className="logo float-left">
                 <a href="index.html" className="img-responsive">
                     {/* <img src="assets/images/resources/sticky-logo.png" alt="" title=""> */}
-                    <img src="../public/images/resources/sticky-logo.png" alt="" />
+                    <img src="images/resources/sticky-logo.png" alt="" />
                 </a>
             </div>
             {/* <!--Right Col--> */}
@@ -256,7 +256,7 @@ const Ratelistcomp = () => {
     <div className="menu-backdrop"></div>
     <div className="close-btn"><span className="icon fa fa-times-circle"></span></div>
     <nav className="menu-box">
-        <div className="nav-logo"><a href="index.html"><img src="../public/images/resources/mobilemenu.png" alt="" /></a></div>
+        <div className="nav-logo"><a href="index.html"><img src="images/resources/mobilemenu.png" alt="" /></a></div>
         <div className="menu-outer">
             {/* <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--> */}
         </div>

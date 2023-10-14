@@ -16,7 +16,6 @@ import PricelistPage from './Pages/PricelistPage';
 function App() {
 
   return (
-    <>
     <BrowserRouter>
     <Routes>
     <Route index element={<Home/>} />
@@ -35,8 +34,6 @@ function App() {
 
     </Routes>
     </BrowserRouter>
-      
-    </>
   )
 }
 
