@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import "../style/LogReg.css";
 import { Form, Formik } from "formik";
-import { object, string, number } from "yup";
+import {
+  validationLoginCollector,
+  validationSignupCollector,
+} from "../validators/auth/kabadCollectorAuth";
+import { userLogin, userSignup } from "../features/auth/authActions";
+import { useDispatch } from "react-redux";
 
 const Wastecolloginregist = () => {
+  const dispatch = useDispatch();
   const [formBox, setFormBox] = useState(false);
   const [changeText, setChangeText] = useState("Sign Up");
   const [formText, setFormText] = useState("Log In");
@@ -44,23 +50,31 @@ const Wastecolloginregist = () => {
       setChangeText("Sign Up");
     }
   };
-  const initialValuesSignup = {
-    fullname: "",
-    email: "",
-    password: "",
-    pincode: "",
-    phoneNumber: "",
-  };
-  const validationSchemaSignup = object().shape({
-    fullname: string().required(),
-    email: string().required().email(),
-    password: string().required(),
-    pincode: number().required(),
-    phoneNumber: string().required(),
-  });
-  const signupSubmit = (data) => {
-    console.log("this is data", data);
-  };
+  const initialValues =
+    formBox === true
+      ? {
+          fullname: "",
+          email: "",
+          password: "",
+          pincode: "",
+          phoneNumber: "",
+        }
+      : {
+          email: "",
+          password: "",
+        };
+  const validationSchema =
+    formBox === true ? validationSignupCollector : validationLoginCollector;
+  const handleSubmit =
+    formBox === true
+      ? (data) => {
+          console.log("this is data signup", data);
+          dispatch(userSignup({ ...data, loginType: "collector" }));
+        }
+      : (data) => {
+          console.log("this is data login", data);
+          dispatch(userLogin({ ...data, loginType: "collector" }));
+        };
   return (
     <>
       <section
@@ -74,15 +88,16 @@ const Wastecolloginregist = () => {
           <div className="left-log-reg-form-grid-bx">
             <div className="login-form-bx">
               <div className="login-logo">
-                <img src="./images/resources/logo.png" alt="" />
+                <img src="/images/resources/logo.png" alt="" />
               </div>
               <Formik
-                initialValues={initialValuesSignup}
-                validationSchema={validationSchemaSignup}
-                onSubmit={signupSubmit}
+                initialValues={initialValues}
+                validationSchema={validationSchema}
+                onSubmit={handleSubmit}
               >
                 {({ handleBlur, handleChange, values, errors, ...rest }) => {
-                  console.log(rest);
+                  console.log("errors", errors);
+                  console.log("values", values);
                   return (
                     <Form
                       className={
@@ -90,49 +105,50 @@ const Wastecolloginregist = () => {
                           ? "log-regst-form registformactive"
                           : "log-regst-form"
                       }
-                      action="#"
                     >
-                      <div className="log-inpt-bx reg-inpt-bx">
-                        <input
-                          type="text"
-                          name="fullname"
-                          id="name"
-                          placeholder="Full Name"
-                          autoComplete="off"
-                          required
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                          value={values.fullname}
-                        />
-                      </div>
-
-                      <div className="log-inpt-bx reg-inpt-bx">
-                        <input
-                          type="text"
-                          name="phoneNumber"
-                          id="mobile"
-                          placeholder="Phone No."
-                          autoComplete="off"
-                          required
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                          value={values.mobile}
-                        />
-                      </div>
-
-                      <div className="log-inpt-bx reg-inpt-bx">
-                        <input
-                          type="pin"
-                          name="pincode"
-                          id="pincode"
-                          placeholder="Work Area Pincode"
-                          autoComplete="off"
-                          required
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                          value={values.pincode}
-                        />
-                      </div>
+                      {formBox === true ? (
+                        <>
+                          <div className="log-inpt-bx reg-inpt-bx">
+                            <input
+                              type="text"
+                              name="fullname"
+                              id="name"
+                              placeholder="Full Name"
+                              autoComplete="off"
+                              required
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              value={values.fullname}
+                            />
+                          </div>
+                          <div className="log-inpt-bx reg-inpt-bx">
+                            <input
+                              type="text"
+                              name="phoneNumber"
+                              id="mobile"
+                              placeholder="Phone No."
+                              autoComplete="off"
+                              required
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              value={values.mobile}
+                            />
+                          </div>
+                          <div className="log-inpt-bx reg-inpt-bx">
+                            <input
+                              type="text"
+                              name="pincode"
+                              id="pincode"
+                              placeholder="Work Area Pincode"
+                              autoComplete="off"
+                              required
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              value={values.pincode}
+                            />
+                          </div>
+                        </>
+                      ) : null}
 
                       <div className="log-inpt-bx log-inpt-bx-login">
                         <input
@@ -163,15 +179,15 @@ const Wastecolloginregist = () => {
                       </div>
 
                       <div className="forgt-passwrd-check-bx-flex">
-                        <div class="form-check">
+                        <div className="form-check">
                           <input
-                            class="form-check-input"
+                            className="form-check-input"
                             type="checkbox"
                             id="flexCheckDefault"
                           />
                           <label
-                            class="form-check-label"
-                            for="flexCheckDefault"
+                            className="form-check-label"
+                            htmlFor="flexCheckDefault"
                           >
                             Please Read "Team & Conditions" for Waste Collectors
                             and Confirm before Clicking the Request Button
@@ -203,28 +219,28 @@ const Wastecolloginregist = () => {
                           </p>
                         )}
                       </div>
-
-                      <div className="switch-form-btn">
-                        <p>New to Kabadpe? </p>
-                        <button
-                          onClick={() => {
-                            toggleForm(), TextContent();
-                          }}
-                        >
-                          {changeText}!
-                        </button>
-                      </div>
                     </Form>
                   );
                 }}
               </Formik>
+
+              <div className="switch-form-btn">
+                <p>New to Kabadpe? </p>
+                <button
+                  onClick={() => {
+                    toggleForm(), TextContent();
+                  }}
+                >
+                  {changeText}!
+                </button>
+              </div>
             </div>
           </div>
 
           <div className="right-forgot-password-form-bx ">
             <div className="login-form-bx">
               <div className="login-logo">
-                <img src="./images/resources/logo.png" alt="" />
+                <img src="/images/resources/logo.png" alt="" />
               </div>
 
               <form action="#">

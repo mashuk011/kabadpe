@@ -8,8 +8,8 @@ function errorLogger(error, rejectWithValue) {
   }
 }
 
-function initialSucesspayloadCreator(data) {
-  return data;
+function initialSucesspayloadCreator(data, payload) {
+  return { data, payload };
 }
 
 export const asyncThunk = (
@@ -20,7 +20,7 @@ export const asyncThunk = (
   return createAsyncThunk(reduxPath, async (data, { rejectWithValue }) => {
     try {
       const res = await api(data);
-      return sucessPayloadCreator(res);
+      return sucessPayloadCreator(res, data);
     } catch (e) {
       return errorLogger(e, rejectWithValue);
     }

@@ -1,18 +1,43 @@
 import axios from "axios";
 export const BASE_URL = ENV_API_BASE_URL;
 
-export const signup = async (data) => {
-  const apiUrl = BASE_URL + `/signup`;
-  const res = await axios.post(apiUrl, data);
+export const signup = async ({
+  fullname,
+  email,
+  phoneNumber,
+  password,
+  pincode,
+  loginType,
+}) => {
+  const setting = {
+    collector: {
+      path: "/auth/kabadCollector/signup",
+      payload: { fullname, email, password, phone: phoneNumber, pincode },
+    },
+    user: {
+      path: "/auth/signup",
+      payload: { email, password, phone: phoneNumber },
+    },
+  };
+  const apiUrl = BASE_URL + setting?.[loginType]?.path;
+  const { data: res } = await axios.post(apiUrl, setting?.[loginType]?.payload);
   return res;
 };
-export const login = async (data) => {
-  const apiUrl = BASE_URL + `/login`;
-  const res = await axios.post(apiUrl, data);
+export const login = async ({ email, password, loginType }) => {
+  const paths = {
+    user: "/auth/login",
+    collector: "/auth/kabadCollector/login",
+  };
+  const apiUrl = BASE_URL + paths[loginType];
+  const { data: res } = await axios.post(apiUrl, { email, password });
   return res;
 };
-export const verifysignup = async (data) => {
-  const apiUrl = BASE_URL + `/verifysignup`;
-  const res = await axios.post(apiUrl, data);
+export const verifysignup = async ({ email, otp, loginType }) => {
+  const paths = {
+    user: "/auth/verifySignup",
+    collector: "/auth/kabadCollector/verifySignup",
+  };
+  const apiUrl = BASE_URL + paths[loginType];
+  const { data: res } = await axios.post(apiUrl, { email, otp });
   return res;
 };
