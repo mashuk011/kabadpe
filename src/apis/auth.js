@@ -1,10 +1,9 @@
 import axios from "axios";
-
-export const BASE_URL = "http://localhost:3333";
+export const BASE_URL = ENV_API_BASE_URL;
 
 export const signup = async (data) => {
   const apiUrl = BASE_URL + `/signup`;
-  const res = await axios.post(apiUrl, data); 
+  const res = await axios.post(apiUrl, data);
   return res;
 };
 export const login = async (data) => {

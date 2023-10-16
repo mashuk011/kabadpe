@@ -1,4 +1,5 @@
-import { login, signup, verifysignup } from "@/api/auth";
+
+import { login, signup, verifysignup } from "../../apis/auth";
 import { asyncThunk } from "../../lib/thunk";
 
 export const userSignup = asyncThunk("auth/signup", signup);
