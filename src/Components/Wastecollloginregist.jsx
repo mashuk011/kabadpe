@@ -7,6 +7,7 @@ import {
 } from "../validators/auth/kabadCollectorAuth";
 import { userLogin, userSignup } from "../features/auth/authActions";
 import { useDispatch } from "react-redux";
+import Redirect from "./Auth/RedirectIfLogin";
 
 const Wastecolloginregist = () => {
   const dispatch = useDispatch();
@@ -77,6 +78,7 @@ const Wastecolloginregist = () => {
         };
   return (
     <>
+      <Redirect />
       <section
         className={
           formComp === true

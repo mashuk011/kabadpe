@@ -27,8 +27,9 @@ const authSlice = createSlice({
   reducers: {
     clearToken: (state) => {
       removeFromLocalStorage("token");
-      state.token = "";
-      state.success = false;
+      state = {
+        ...initialState,
+      };
     },
   },
   extraReducers: (builder) => {
@@ -43,7 +44,6 @@ const authSlice = createSlice({
       };
     });
     builder.addCase(userLogin.fulfilled, (state, { payload: { data } }) => {
-      console.log("payload", data);
       setInLocalStorage("token", data?.token);
       state = {
         ...state,
@@ -57,6 +57,7 @@ const authSlice = createSlice({
         },
         user: data?.user,
         token: data?.token,
+        error: "",
       };
     });
     builder.addCase(userLogin.rejected, (state, { payload }) => {

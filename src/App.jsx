@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Service from "./Pages/Service";
@@ -12,9 +12,7 @@ import LogReg from "./Pages/LogReg";
 import ResetPassword from "./Pages/ResetPassword";
 import RateList from "./Pages/RateList";
 import PricelistPage from "./Pages/PricelistPage";
-import { useEffect } from "react";
 function App() {
-
   return (
     <Routes>
       <Route path="/" element={<Home />} />
