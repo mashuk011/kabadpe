@@ -6,17 +6,21 @@ import {
   validationSignupCollector,
 } from "../validators/auth/kabadCollectorAuth";
 import { userLogin, userSignup } from "../features/auth/authActions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Redirect from "./Auth/RedirectIfLogin";
+import { useNavigate } from "react-router-dom";
+import { SignUpToVerify } from "./Auth/SignupToVerify";
 
 const Wastecolloginregist = () => {
   const dispatch = useDispatch();
+  const { errors: errorsInAuth } = useSelector((s) => s.auth);
   const [formBox, setFormBox] = useState(false);
   const [changeText, setChangeText] = useState("Sign Up");
   const [formText, setFormText] = useState("Log In");
   const [thanksText, setThanksText] = useState(false);
   const [forgotPara, setForgotPara] = useState(false);
   const [formComp, setFormComp] = useState(false);
+  const [termsChecked, setTermsChecked] = useState(false);
 
   const sendReuqestfuct = () => {
     setForgotPara(true);
@@ -69,16 +73,18 @@ const Wastecolloginregist = () => {
   const handleSubmit =
     formBox === true
       ? (data) => {
-          console.log("this is data signup", data);
+          if (!termsChecked) {
+            return;
+          }
           dispatch(userSignup({ ...data, loginType: "collector" }));
         }
       : (data) => {
-          console.log("this is data login", data);
           dispatch(userLogin({ ...data, loginType: "collector" }));
         };
   return (
     <>
       <Redirect />
+      <SignUpToVerify />
       <section
         className={
           formComp === true
@@ -97,9 +103,14 @@ const Wastecolloginregist = () => {
                 validationSchema={validationSchema}
                 onSubmit={handleSubmit}
               >
-                {({ handleBlur, handleChange, values, errors, ...rest }) => {
-                  console.log("errors", errors);
-                  console.log("values", values);
+                {({
+                  handleBlur,
+                  handleChange,
+                  values,
+                  errors,
+                  touched,
+                  ...rest
+                }) => {
                   return (
                     <Form
                       className={
@@ -122,6 +133,11 @@ const Wastecolloginregist = () => {
                               onBlur={handleBlur}
                               value={values.fullname}
                             />
+                            {touched.fullname && errors.fullname ? (
+                              <div style={{ color: "red" }}>
+                                {errors.fullname}
+                              </div>
+                            ) : null}
                           </div>
                           <div className="log-inpt-bx reg-inpt-bx">
                             <input
@@ -133,8 +149,13 @@ const Wastecolloginregist = () => {
                               required
                               onChange={handleChange}
                               onBlur={handleBlur}
-                              value={values.mobile}
+                              value={values.phoneNumber}
                             />
+                            {touched.phoneNumber && errors.phoneNumber ? (
+                              <div style={{ color: "red" }}>
+                                {errors.phoneNumber}
+                              </div>
+                            ) : null}
                           </div>
                           <div className="log-inpt-bx reg-inpt-bx">
                             <input
@@ -148,6 +169,11 @@ const Wastecolloginregist = () => {
                               onBlur={handleBlur}
                               value={values.pincode}
                             />
+                            {touched.pincode && errors.pincode ? (
+                              <div style={{ color: "red" }}>
+                                {errors.pincode}
+                              </div>
+                            ) : null}
                           </div>
                         </>
                       ) : null}
@@ -164,6 +190,9 @@ const Wastecolloginregist = () => {
                           onBlur={handleBlur}
                           value={values.email}
                         />
+                        {touched.email && errors.email ? (
+                          <div style={{ color: "red" }}>{errors.email}</div>
+                        ) : null}
                       </div>
 
                       <div className="log-inpt-bx log-inpt-bx-login">
@@ -178,11 +207,16 @@ const Wastecolloginregist = () => {
                           onBlur={handleBlur}
                           value={values.password}
                         />
+                        {touched.password && errors.password ? (
+                          <div style={{ color: "red" }}>{errors.password}</div>
+                        ) : null}
                       </div>
 
                       <div className="forgt-passwrd-check-bx-flex">
                         <div className="form-check">
                           <input
+                            checked={termsChecked}
+                            onChange={(e) => setTermsChecked(e.target.checked)}
                             className="form-check-input"
                             type="checkbox"
                             id="flexCheckDefault"
@@ -211,15 +245,26 @@ const Wastecolloginregist = () => {
                       >
                         {formText}
                       </button>
+                      <div>
+                        {formBox === true ? (
+                          errorsInAuth?.signup ? (
+                            <p style={{ color: "red" }}>
+                              {errorsInAuth?.signup}
+                            </p>
+                          ) : null
+                        ) : errorsInAuth.login ? (
+                          <p style={{ color: "red" }}>{errorsInAuth.login}</p>
+                        ) : null}
+                      </div>
 
                       <div className="thanks_para">
-                        {thanksText && (
+                        {/* {thanksText && (
                           <p>
                             Thank You For Your Intertest, Admin will check and
                             Confirm Your Registration, You Will Be Notify On
                             Your Mail/Mobile Number Soon.
                           </p>
-                        )}
+                        )} */}
                       </div>
                     </Form>
                   );
@@ -244,7 +289,6 @@ const Wastecolloginregist = () => {
               <div className="login-logo">
                 <img src="/images/resources/logo.png" alt="" />
               </div>
-
               <form action="#">
                 <div className="log-inpt-bx log-forgot-passwrd-inpt-bx">
                   <input

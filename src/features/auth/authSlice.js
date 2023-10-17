@@ -12,13 +12,17 @@ const initialState = {
     verifySignup: false,
   },
   token: "",
-  error: "",
+  errors: {
+    login: "",
+    signup: "",
+    verifySignup: "",
+  },
   success: {
     login: false,
     signup: false,
     verifySignup: false,
   },
-  user: {},
+  user: null,
 };
 
 const authSlice = createSlice({
@@ -27,76 +31,128 @@ const authSlice = createSlice({
   reducers: {
     clearToken: (state) => {
       removeFromLocalStorage("token");
-      state = {
-        ...initialState,
-      };
+      // state = {
+      //   ...initialState,
+      // };
     },
   },
   extraReducers: (builder) => {
     builder.addCase(userLogin.pending, (state, { payload }) => {
-      state = {
-        ...state,
-        loading: {
-          ...state.loading,
-          login: true,
-        },
-        error: "",
+      state.loading = {
+        ...state.loading,
+        login: true,
+      };
+      state.errors = {
+        ...state.errors,
+        login: "",
       };
     });
     builder.addCase(userLogin.fulfilled, (state, { payload: { data } }) => {
       setInLocalStorage("token", data?.token);
-      state = {
-        ...state,
-        loading: {
-          ...state.loading,
-          login: false,
-        },
-        success: {
-          ...state.success,
-          login: true,
-        },
-        user: data?.user,
-        token: data?.token,
-        error: "",
+      state.success = {
+        ...state.success,
+        login: true,
+      };
+      state.loading = {
+        ...state.loading,
+        login: false,
+      };
+      state.token = data?.token;
+      state.errors = {
+        ...state.errors,
+        login: "",
       };
     });
     builder.addCase(userLogin.rejected, (state, { payload }) => {
-      state = {
-        ...state,
-        loading: {
-          ...state.loading,
-          login: true,
-        },
-        success: {
-          ...state.success,
-          login: false,
-        },
-        error: payload,
+      state.loading = {
+        ...state.loading,
+        login: true,
+      };
+      state.loading = {
+        ...state.loading,
+        login: true,
+      };
+      state.success = {
+        ...state.success,
+        login: false,
+      };
+      state.errors = {
+        ...state.errors,
+        login: payload,
       };
     });
     builder.addCase(userSignup.pending, (state, { payload }) => {
-      state.loading.signup = true;
-      state.error = "";
+      state.loading = { ...state.loading, signup: true };
+      state.errors = {
+        ...state.errors,
+        signup: "",
+      };
     });
-    builder.addCase(userSignup.fulfilled, (state, { payload }) => {
-      state.loading.signup = false;
-      state.success.signup = true;
+    builder.addCase(userSignup.fulfilled, (state, { payload: { payload } }) => {
+      state.loading = { ...state.loading, signup: false };
+      state.success = { ...state.loading, signup: true };
+      state.errors = {
+        ...state.errors,
+        signup: "",
+      };
+      state.user = payload;
+      state = {
+        ...state,
+      };
     });
     builder.addCase(userSignup.rejected, (state, { payload }) => {
       state.loading.signup = false;
-      state.error = payload;
+      state.errors = {
+        ...state.errors,
+        signup: payload,
+      };
     });
     builder.addCase(userVerifySignup.pending, (state, { payload }) => {
-      state.loading.verifySignup = true;
-      state.error = "";
+      state.loading = {
+        ...state.loading,
+        verifySignup: true,
+      };
+      state.errors = {
+        ...state.errors,
+        verifySignup: "",
+      };
     });
-    builder.addCase(userVerifySignup.fulfilled, (state, { payload }) => {
-      state.loading.verifySignup = false;
-      state.success.verifySignup = true;
-    });
+    builder.addCase(
+      userVerifySignup.fulfilled,
+      (state, { payload: { data } }) => {
+        setInLocalStorage("token", data?.token);
+        state.success = {
+          ...state.success,
+          verifySignup: true,
+        };
+        state.loading = {
+          ...state.loading,
+          verifySignup: false,
+        };
+        state.token = data?.token;
+        state.errors = {
+          ...state.errors,
+          verifySignup: "",
+        };
+      }
+    );
     builder.addCase(userVerifySignup.rejected, (state, { payload }) => {
-      state.loading.signup = false;
-      state.error = payload;
+      state.loading = {
+        ...state.loading,
+        verifySignup: true,
+      };
+      state.loading = {
+        ...state.loading,
+        verifySignup: true,
+      };
+      state.success = {
+        ...state.success,
+        verifySignup: false,
+      };
+      state.errors = {
+        ...state.errors,
+        verifySignup: payload,
+      };
     });
   },
 });

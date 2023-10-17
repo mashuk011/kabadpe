@@ -12,6 +12,8 @@ import LogReg from "./Pages/LogReg";
 import ResetPassword from "./Pages/ResetPassword";
 import RateList from "./Pages/RateList";
 import PricelistPage from "./Pages/PricelistPage";
+import OtpVerify from "./Pages/OtpVerify";
+
 function App() {
   return (
     <Routes>
