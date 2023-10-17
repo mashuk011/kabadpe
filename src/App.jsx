@@ -27,6 +27,7 @@ function App() {
       <Route path="/resetpasswrd" element={<ResetPassword />} />
       <Route path="/ratelist" element={<RateList />} />
       <Route path="/pricelist" element={<PricelistPage />} />
+      <Route path="/otpverify" element={<OtpVerify />} />
     </Routes>
   );
 }

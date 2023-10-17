@@ -334,3 +334,13 @@ Our Login Registration CSS code styling
     height: 100%;
     background: url('../images/customImg/login-bg.jpg')no-repeat center center/cover;
 }
+
+/* ________________________ otp styling  */
+
+.login-logo2{
+   margin-bottom: 3rem;
+}
+
+.otp-inpt-bx{
+   margin-bottom: 2rem;
+}
