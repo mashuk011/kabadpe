@@ -12,6 +12,7 @@ import LogReg from './Pages/LogReg';
 import ResetPassword from './Pages/ResetPassword';
 import RateList from './Pages/RateList';
 import PricelistPage from './Pages/PricelistPage';
+import OtpVerify from './Pages/OtpVerify';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
       <Route path='/resetpasswrd' element={<ResetPassword/>} />
       <Route path='/ratelist' element={<RateList/>} />
       <Route path='/pricelist' element={<PricelistPage/>} />
+      <Route path='/otpverify' element={<OtpVerify/>} />
 
     </Routes>
     </BrowserRouter>
