@@ -28,14 +28,7 @@ const initialState = {
 const authSlice = createSlice({
   name: "auth",
   initialState,
-  reducers: {
-    clearToken: (state) => {
-      removeFromLocalStorage("token");
-      // state = {
-      //   ...initialState,
-      // };
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder.addCase(userLogin.pending, (state, { payload }) => {
       state.loading = {
@@ -156,5 +149,4 @@ const authSlice = createSlice({
     });
   },
 });
-export const { clearToken } = authSlice.actions;
 export default authSlice.reducer;

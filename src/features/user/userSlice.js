@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { userFetch } from "./userActions";
+import { removeFromLocalStorage } from "../../lib/localStorage";
 
 const initialState = {
   loading: false,
@@ -8,7 +9,11 @@ const initialState = {
   success: false,
 };
 const logoutAction = (state) => {
-  state = { ...initialState };
+  removeFromLocalStorage("token");
+  state.loading = false;
+  state.userInfo = null;
+  state.error = "";
+  state.success = false;
 };
 const userSlice = createSlice({
   name: "user",

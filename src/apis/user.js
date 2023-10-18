@@ -1,5 +1,6 @@
 import axios from "axios";
 import { getFromLocalStorage } from "../lib/localStorage";
+import { resolvePromise } from "../lib/http";
 
 export const getUser = async () => {
   const apiUrl = ENV_API_BASE_URL + `/user`;
@@ -11,3 +12,5 @@ export const getUser = async () => {
   });
   return res;
 };
+
+export const testApi = resolvePromise(getUser);

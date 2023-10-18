@@ -6,7 +6,7 @@ export const signup = async ({
   phoneNumber,
   password,
   pincode,
-  loginType,
+  loginType = "user",
 }) => {
   const setting = {
     collector: {
@@ -23,7 +23,7 @@ export const signup = async ({
   return res;
 };
 
-export const login = async ({ email, password, loginType }) => {
+export const login = async ({ email, password, loginType = "user" }) => {
   const paths = {
     user: "/auth/login",
     collector: "/auth/kabadCollector/login",
@@ -33,7 +33,7 @@ export const login = async ({ email, password, loginType }) => {
   return res;
 };
 
-export const verifysignup = async ({ email, otp, loginType }) => {
+export const verifysignup = async ({ email, otp, loginType = "user" }) => {
   const paths = {
     user: "/auth/verifySignup",
     collector: "/auth/kabadCollector/verifySignup",

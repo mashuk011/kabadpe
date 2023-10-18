@@ -13,8 +13,18 @@ import ResetPassword from "./Pages/ResetPassword";
 import RateList from "./Pages/RateList";
 import PricelistPage from "./Pages/PricelistPage";
 import OtpVerify from "./Pages/OtpVerify";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { userFetch } from "./features/user/userActions";
 
 function App() {
+  const dispatch = useDispatch();
+  const {
+    success: { login, verifySignup },
+  } = useSelector((s) => s.auth);
+  useEffect(() => {
+    dispatch(userFetch());
+  }, [login, verifySignup]);
   return (
     <Routes>
       <Route path="/" element={<Home />} />

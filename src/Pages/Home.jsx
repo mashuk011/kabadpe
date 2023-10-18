@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
+import Protect from "../Components/Auth/ProtectComp";
 const Home = () => {
-  useEffect(() => {}, []);
   return (
     <>
-      <div onClick={() => console.log(ENV)}>hello world</div>
+      <Protect>
+        <div onClick={() => console.log(ENV)}>hello world</div>
+      </Protect>
     </>
   );
 };

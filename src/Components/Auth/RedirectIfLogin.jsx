@@ -15,7 +15,7 @@ const Redirect = () => {
   }, [verifySignup, login]);
   useEffect(() => {
     if (userInfo || success) {
-      navigate("/home");
+      navigate("/");
     }
   }, [userInfo, success]);
   return <></>;
