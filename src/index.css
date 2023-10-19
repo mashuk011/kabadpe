@@ -264,7 +264,7 @@ li {
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
   border-radius: 0px;
-  webkit-transition-duration: 800ms;
+  /* webkit-transition-duration: 800ms; */
   transition-duration: 800ms;
   background-color: var(--thm-base);
   z-index: 1;
@@ -362,7 +362,7 @@ li {
   transform: scale(1.1);
 }
 
-.btn-two:hover:before {}
+/* .btn-two:hover:before {} */
 
 .btn-two:hover {
   color: var(--thm-base);
@@ -407,7 +407,6 @@ li {
   left: 0;
   width: 40px;
   height: 40px;
-  vertical-align: middle;
   background-color: #ffffff;
   border: 1px solid #dae5ec;
   cursor: pointer;
@@ -417,6 +416,8 @@ li {
   -ms-transition: all 300ms ease;
   -o-transition: all 300ms ease;
   transition: all 300ms ease;
+  vertical-align: middle !important;
+
 }
 
 .checked-box1 label span:before {
@@ -1323,7 +1324,7 @@ li {
   z-index: 999999999;
 }
 
-.scroll-top span {}
+/* .scroll-top span {} */
 
 .scroll-top:after {
   position: absolute;
@@ -4736,6 +4737,54 @@ Our contributon sec Css
 .about-drpdwn-bx p:hover a{
   color: #fff;
 }
+
+
+/* _____________________ our top header left- link new css code  */
+
+.t-headr-left-links-bx {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: flex-start;
+}
+
+.t-headr-left-links-bx a {
+  display: block;
+  position: relative;
+  color: #fff;
+  transition: 500ms ease;
+
+}
+
+.t-headr-left-links-bx a:hover,
+.t-headr-left-links-bx a.linkactive {
+  color: #95c41f;
+}
+
+.t-headr-left-links-bx a:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -1rem;
+  transform: translateY(-50%);
+  width: .1rem;
+  height: 95%;
+  background-color: #fff;
+
+}
+
+.t-headr-left-links-bx a:last-child:before {
+  display: none;
+}
+
+.outer-box2 {
+  padding-block: 0.25rem !important;
+}
+
+.header-top{
+  background-color: #050a34 !important;
+}
+
 
 @media all and (min-width: 1024px) and (max-width: 1250px){
 

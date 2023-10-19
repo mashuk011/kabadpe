@@ -1,39 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom';
+import Datepicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css'
 import '../style/Ratelist.css';
 import "../style/MyAccount.css";
-import { NavLink } from 'react-router-dom';
 
 const Ratelistcomp = () => {
-    // const [selectedValue, setSelectedValue] = useState('apple');
-    // const [tableData, setTableData] = useState([]);
-
-    // const fruitImages = {
-    //   apple: './images/customImg/book.png',
-    //   banana: './images/customImg/cash.png',
-    //   orange: './images/customImg/beam.png',
-    //   // Add more options and image sources as needed
-    // };
+    const [listBox , setListBox] =  useState(false);
+    const [mainPrice , setmainPrice] =  useState(false);
+    const [selectedDate , setSelectedDate] =  useState(null);
   
-    // const handleSelectChange = (event) => {
-    //   const value = event.target.value;
-    //   setSelectedValue(value);
-    // };
+    const  hideFunc  = () =>  {
+        setListBox(true);
+    }
 
-  
-    // const addStaticRow = () => {
-    //     const staticRow = { name: '', age: '' }; // Replace with your static data
-    //     setTableData([...tableData, staticRow]);
-    //   };
+    const ShcedulPickuFunc = () => {
 
-
-  
-
-    
-    
-    //   const handleDeleteData = (id) => {
-    //     const updatedData = data.filter((item) => item.id !== id);
-    //     setData(updatedData);
-    //   };
+        setmainPrice(true);
+        
+    }
 
   return (
     <>
@@ -283,7 +268,7 @@ const Ratelistcomp = () => {
         </span>
         <span className="u-pf-four"></span>
 
-        <h2>Price List</h2>
+        <h2>Rate List</h2>
         
       </section>
 
@@ -300,7 +285,7 @@ const Ratelistcomp = () => {
                             <tr>
                                 <th>S No.</th>
                                 <th>Waste Products</th>
-                                <th>At the ₹/Per KG</th>
+                                <th>Rate/KG</th>
 
 
                             </tr>
@@ -317,7 +302,7 @@ const Ratelistcomp = () => {
                                     </div>
                                 </td>
 
-                                <td>₹20.00 KG</td>
+                                <td>₹20.00 </td>
                                 
                             </tr>
 
@@ -332,7 +317,7 @@ const Ratelistcomp = () => {
                                     </div>
                                 </td>
 
-                                <td>₹10.00 KG</td>
+                                <td>₹10.00 </td>
                                 
                             </tr>
 
@@ -348,7 +333,7 @@ const Ratelistcomp = () => {
                                     </div>
                                 </td>
 
-                                <td>₹40.00 KG</td>
+                                <td>₹40.00 </td>
                                 
                             </tr>
 
@@ -363,7 +348,7 @@ const Ratelistcomp = () => {
                                     </div>
                                 </td>
 
-                                <td>₹50.00 KG</td>
+                                <td>₹50.00 </td>
                                 
                             </tr>
 
@@ -379,7 +364,7 @@ const Ratelistcomp = () => {
                                     </div>
                                 </td>
 
-                                <td>₹53.00 KG</td>
+                                <td>₹53.00 </td>
                                 
                             </tr>
 
@@ -394,7 +379,7 @@ const Ratelistcomp = () => {
                                     </div>
                                 </td>
 
-                                <td>₹36.00 KG</td>
+                                <td>₹36.00 </td>
                                 
                             </tr>
 
@@ -411,7 +396,7 @@ const Ratelistcomp = () => {
                                     </div>
                                 </td>
 
-                                <td>₹29.00 KG</td>
+                                <td>₹29.00 </td>
                                 
                             </tr>
 
@@ -420,17 +405,14 @@ const Ratelistcomp = () => {
                         </tbody>
                     </table>
                 </div>
-                
-
-
-
+  
                 <div className="ratelist-table-bx">
                     <table>
                         <thead>
                             <tr>
                                 <th>S No.</th>
                                 <th>Waste Products</th>
-                                <th>At the ₹/Per KG</th>
+                                <th>Rate/KG</th>
 
 
                             </tr>
@@ -449,7 +431,7 @@ const Ratelistcomp = () => {
                                     </div>
                                 </td>
 
-                                <td>₹36.00 KG</td>
+                                <td>₹36.00 </td>
                                 
                             </tr>
 
@@ -466,7 +448,7 @@ const Ratelistcomp = () => {
                                     </div>
                                 </td>
 
-                                <td>₹29.00 KG</td>
+                                <td>₹29.00 </td>
                                 
                             </tr>
 
@@ -482,7 +464,7 @@ const Ratelistcomp = () => {
                                     </div>
                                 </td>
 
-                                <td>₹28.00 KG</td>
+                                <td>₹28.00 </td>
                                 
                             </tr>
 
@@ -497,7 +479,7 @@ const Ratelistcomp = () => {
                                     </div>
                                 </td>
 
-                                <td>₹36.00 KG</td>
+                                <td>₹36.00 </td>
                                 
                             </tr>
 
@@ -513,7 +495,7 @@ const Ratelistcomp = () => {
                                     </div>
                                 </td>
 
-                                <td>₹47.00 KG</td>
+                                <td>₹47.00 </td>
                                 
                             </tr>
 
@@ -528,7 +510,7 @@ const Ratelistcomp = () => {
                                     </div>
                                 </td>
 
-                                <td>₹33.00 KG</td>
+                                <td>₹33.00 </td>
                                 
 
                             </tr>
@@ -545,7 +527,7 @@ const Ratelistcomp = () => {
                                     </div>
                                 </td>
 
-                                <td>₹33.00 KG</td>
+                                <td>₹33.00 </td>
                                 
                                 
                             </tr>
@@ -555,6 +537,174 @@ const Ratelistcomp = () => {
                         </tbody>
                     </table>
                 </div>
+
+                <div className={ mainPrice === true ? "main-price-third-bx mainpriceactive" : "main-price-third-bx"}>
+
+
+                <div className={listBox === true ?  "prodactive price-third-box" : " price-third-box"}>
+
+                    <div className="prod-list-main">
+                <span>E-WASTE RECYCLING</span>
+                <h4>Calculator</h4>
+
+            <div className="prod-list-bx">
+                <div className="p-bx">
+                    <div className="left-prod-i">
+                        <img src="./images/customImg/magazine.png" alt="" />
+                    <h5>Magazine</h5>
+                    </div>
+
+                   <input type="text" name='value' id='value' placeholder='.../kg' />
+                </div>
+
+                <div className="p-bx">
+                <div className="left-prod-i">
+                        <img src="./images/customImg/wheel.png" alt="" />
+                    <h5>Wheels</h5>
+                    </div>
+                    <input type="text" name='value' id='value' placeholder='.../kg' />
+
+                </div>
+                <div className="p-bx">
+                <div className="left-prod-i">
+                        <img src="./images/customImg/cash.png" alt="" />
+                    <h5>Papers</h5>
+                    </div>
+                    <input type="text" name='value' id='value' placeholder='.../kg' />
+
+                </div>
+                <div className="p-bx">
+                <div className="left-prod-i">
+                        <img src="./images/customImg/book.png" alt="" />
+                    <h5>Books</h5>
+                    </div>
+                    <input type="text" name='value' id='value' placeholder='.../kg' />
+
+                </div>
+                <div className="p-bx">
+                <div className="left-prod-i">
+                        <img src="./images/customImg/plastic.png" alt="" />
+                    <h5>Plastic</h5>
+                    </div>
+                    <input type="text" name='value' id='value' placeholder='.../kg' />
+
+                </div>
+                <div className="p-bx">
+                <div className="left-prod-i">
+                        <img src="./images/customImg/cardboard.png" alt="" />
+                    <h5>Cardboard</h5>
+                    </div>
+                    <input type="text" name='value' id='value' placeholder='.../kg' />
+
+                </div>
+
+                <div className="p-bx">
+                <div className="left-prod-i">
+                        <img src="./images/customImg/iron-bar.png" alt="" />
+                    <h5>Steel</h5>
+                    </div>
+                    <input type="text" name='value' id='value' placeholder='.../kg' />
+
+                </div>
+
+                <div className="p-bx">
+                <div className="left-prod-i">
+                        <img src="./images/customImg/furniture.png" alt="" />
+                    <h5>Wood</h5>
+                    </div>
+                    <input type="text" name='value' id='value' placeholder='.../kg' />
+
+                </div>
+                
+            </div>
+
+            <button className="prod-submit-btn" onClick={hideFunc}>
+                Calculate Benefits !
+            </button>
+
+            </div>
+
+
+
+                <div className="schedule-pickup-bx">
+
+                    <h5>Total Valuation of your waste</h5>
+
+                    <h3>4,570.00/</h3>
+
+                    <button onClick={ShcedulPickuFunc} className="schedule-pickup-btn">
+                        Schedule Pickup
+                    </button>
+                    
+                </div>
+
+                   
+
+                <div className="schedule-pickup-form-bx">
+
+                <h5>Schedual Pickup</h5>
+
+                <form action="#">
+
+                    <div className="pickup-inpt-bx">
+                        <div className="sched-inpt bor-inpt">
+                        <input type="text" name='name' id='name' placeholder='Name' />
+                        </div>
+                    </div>
+
+                    <div className="pickup-inpt-bx">
+                        <div className="sched-inpt bor-inpt">
+                        <input type="text" name='phone' id='phone' placeholder='Phone' />
+                        </div>
+                    </div>
+
+
+                <div className="pickup-inpt-bx">
+                <div className="date-bx2 bor-inpt">
+                <i class="fa-solid fa-calendar-days calendar" ></i>
+                    <Datepicker className='datepicker' selected={selectedDate} onChange={date=>setSelectedDate(date)} />
+                </div>
+                </div>
+
+                 
+
+                    <div className="pickup-inpt-bx">
+                        <div className="sched-inpt sel-bx bor-inpt">
+                        <i class="fa-solid fa-angle-down arrow-dwn"></i>
+                        <select name="time" id="time">
+                        <option value="time">Choose Time Slot</option>
+                            <option value="time">10.00 to 11.00</option>
+                            <option value="time">11.00 to 12.00</option>
+                            <option value="time">1.00 to 2.00</option>
+                            <option value="time">2.00 to 3.00</option>
+                            <option value="time">4.00 to 5.00</option>
+                            <option value="time">5.00 to 6.00</option>
+
+                        </select>
+                        </div>
+                    </div>
+
+
+                    <div className="pickup-inpt-bx">
+                        <div className="sched-inpt bor-inpt">
+                        <input type="text" name='address' id='address' placeholder='Address' />
+                        </div>
+                    </div>
+
+
+                    <button className="pickup-submit-btn">
+                        Submit
+                    </button>
+                    
+                </form>
+                    
+                </div>
+
+
+                </div>      
+
+                </div>
+
                 
             </div>
             

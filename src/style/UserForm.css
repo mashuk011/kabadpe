@@ -1,0 +1,302 @@
+/* ___________________________
+ Our User Form css code styling 
+ ----------------------------------------- */
+
+.user-form-comp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 100000;
+}
+
+.user-form-comp:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #01010189;
+    z-index: -1;
+}
+
+.user-form-main-bx {
+    position: relative;
+    width: 26rem;
+    top: 3rem;
+    background-color: #fff;
+    padding: 2rem 2rem;
+    border-radius: .4rem;
+}
+
+.user-form-bx,
+.user.login-form {
+    position: relative;
+    width: 100%;
+}
+
+
+
+.use-form-heading {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+}
+
+.use-form-heading h3 {
+    font-size: 1.87rem;
+    margin-bottom: .55rem;
+    color: #000248;
+}
+
+.use-form-heading p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 1px;
+}
+
+.user-form form {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.user-form-inpt-bx {
+    position: relative;
+    width: 100%;
+    height: 2.87rem;
+    background-color: #f6f6fe;
+    transition: 500ms ease;
+    transition: 500ms ease;
+
+
+}
+
+.user-form-inpt-bx input {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: .7px;
+    box-shadow: none;
+    padding-inline: .87rem;
+    color: #7b7a7a;
+
+}
+
+.user-form-inpt-bx input::placeholder {
+    color: #939393;
+    font-weight: 400;
+}
+
+.form-btns-flex-bx {
+    margin-top: .45rem;
+    display: flex;
+    align-items: center;
+    gap: 1.45rem;
+}
+
+.user-form-login-btn {
+    position: relative;
+    padding: .3rem 1.87rem;
+    border-radius: .3rem;
+    color: #fff;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-align: center;
+    background-color: #337aed;
+    transition: 500ms ease;
+
+}
+
+.user-form-login-btn:hover {
+    background-color: #000248;
+}
+
+.user-form-forgot-passwd-btn {
+    font-size: .98rem;
+    color: #7b7a7a;
+    letter-spacing: .7px;
+    transition: 500ms ease;
+}
+
+.user-form-forgot-passwd-btn:hover {
+    color: #000248;
+}
+
+.other-pltofrm-login-link-flex-bx {
+    position: relative;
+    margin-top: .1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.login-link-bx {
+    position: relative;
+    padding: .3rem 2.87rem;
+    background-color: #f6f6fe;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 500;
+    letter-spacing: .6px;
+    font-size: .87rem;
+}
+
+.login-link-bx i {
+    font-size: 1rem;
+    color: #6078ab;
+}
+
+.login-link-bx2 i {
+    color: #e26d5f !important;
+}
+
+.login-link-bx3 i {
+    color: #3193c3 !important;
+}
+
+.userform-register-btn {
+    position: relative;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: .76px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 11rem;
+    margin: .5rem auto 0 auto;
+    color: #000248;
+}
+
+.userform-register-btn:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: .1rem;
+    background-color: #000248;
+}
+
+.user-form-inpt-bx3 {
+    transition: 500ms ease;
+    height: 0;
+    transform: scaleY(0);
+    opacity: 0;
+}
+
+.user-form-bx.userformactive .user-form-inpt-bx3 {
+    height: 2.87rem;
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+.user-form-bx.userformactive .user-form-forgot-passwd-btn {
+    display: none;
+}
+
+.user-form-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    color: #000248;
+}
+
+.user-form-comp {
+    transition: 700ms ease;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+}
+
+.user-form-main-bx {
+    transform: translateY(-60px);
+    opacity: 0;
+    transition: 600ms ease;
+    transition-delay: .1s;
+}
+
+.user-form-comp.userformactive {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.user-form-comp.userformactive .user-form-main-bx {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.UserLoginBtn55 {
+    background-color: transparent !important;
+    color: #000248 !important;
+    font-weight: 500 !important;
+    letter-spacing: 1px !important;
+    font-size: 1rem !important;
+    width: 6.5rem !important;
+}
+
+.UserLoginBtn55:hover {
+    background-color: #000248 !important;
+    color: #fff !important;
+}
+
+.user-form-main-bx.userforgetpasswrdactive .user-form-inpt-bx2 {
+    height: 2.87rem;
+    transform: scale(1);
+    opacity: 1;
+
+}
+
+.user-form-main-bx.userforgetpasswrdactive .user-form-inpt-bx6 {
+    height: 0;
+    transform: scale(0);
+    opacity: 0;
+}
+
+.user-form-main-bx.userforgetpasswrdactive .form-btns-flex-bx {
+    flex-direction: column;
+}
+
+.user-form-main-bx.userforgetpasswrdactive .user-form-forgot-passwd-btn,
+.user-form-main-bx.userforgetpasswrdactive .other-pltofrm-login-link-flex-bx {
+    display: none;
+}
+
+.user-form-main-bx.userforgetpasswrdactive span , 
+.user-form-main-bx.userforgetpasswrdactive .userform-register-btn {
+    display: none;
+}
+
+.wallet-icon{
+    width: 2rem;
+    cursor: pointer;
+}
+
+.wallet-icon img{
+    width: 100%;
+    height: auto;
+    filter: invert(100%);
+}
