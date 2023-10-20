@@ -21,7 +21,7 @@
     position: relative;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     column-gap: 3rem;
     row-gap: 3rem;
   }
@@ -56,7 +56,7 @@
     /* background-color: #073940;  2f7377*/
     background-color: #0e4e51;
     text-align: center;
-    font-size: 1.1rem;
+    font-size: .89rem;
     font-weight: 400;
     letter-spacing: 1px;
     color: #fff;
@@ -153,3 +153,331 @@
   .image-container img{
     width: 3rem;
   }
+
+  .main-price-third-bx{
+    position: relative;
+    width: 100%;
+    background-color: #0e4e51;
+    padding: 1rem 1rem;
+  }
+
+  .price-third-box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .prod-list-bx{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .76rem;
+    /* max-height: 20rem; */
+    /* overflow-y: auto; */
+  }
+
+  
+  .prod-list-bx::-webkit-scrollbar{
+    width: .145rem;
+    background-color: transparent;
+
+  }
+
+  .prod-list-bx::-webkit-scrollbar-thumb{
+    background-color: #d6fdfe;
+  }
+
+  .p-bx{
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+
+  .p-bx h5{
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: #fff;
+  }
+
+  .p-bx input{
+    position: relative;
+    width: 5rem;
+    height: 2.45rem;
+    background-color: #fff;
+    border-radius: .2rem;
+    padding: .5rem .65rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000248;
+  }
+
+  .prod-submit-btn{
+    position: relative;
+    margin-top: 1rem;
+    width: 100%;
+    padding: .45rem .3rem;
+    text-align: center;
+    background-color: #2f7377;
+    border-radius: .5rem;
+    color: #fff;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+
+  .prod-list-main{
+    display: none;
+
+  }
+
+  .prod-list-main{
+      display: flex;
+      flex-direction: column;
+  }
+
+  .schedule-pickup-bx{
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: none;
+  }
+
+
+
+  .price-third-box.prodactive .schedule-pickup-bx{
+    display: flex;
+    z-index: 20;
+  }
+
+  .price-third-box.prodactive .prod-list-main{
+    display: none;
+  }
+
+  .schedule-pickup-bx h5{
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: 5rem;
+
+  }
+
+  .schedule-pickup-bx h3{
+    font-size: 2rem;
+    letter-spacing: 1.56px;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .schedule-pickup-btn{
+    position: relative;
+    width: 10rem;
+    padding: .45rem .15rem;
+    text-align: center;
+    background-color: #2ac4c8;
+    font-size: .9rem;
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-radius: 5rem;
+    
+  }
+
+  .schedule-pickup-main-bx{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .schedule-pickup-form-bx{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 17rem;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
+  .schedule-pickup-form-bx h5{
+    font-size: 1.67rem;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+  }
+
+  .schedule-pickup-form-bx form{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .67rem;
+  }
+
+  .pickup-inpt-bx{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+
+
+  .sched-inpt{
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  .sched-inpt input , .sel-bx select{
+    position: relative;
+    width: 100%;
+    font-size: 1rem;
+    color: #000248;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: .2rem .5rem;
+  
+  }
+
+  .sel-bx{
+    position: relative ;
+    z-index: 10;
+  }
+
+  .sel-bx select{
+    padding: .35rem .5rem;
+    -webkit-appearance: none;
+  }
+
+  .sel-bx .arrow-dwn{
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    color: #000248;
+    font-size: .98rem;
+    z-index: 1;
+    
+  }
+
+ 
+
+  .date-bx2{
+    position: relative;
+    z-index: 10;
+    background-color: #fff;
+    font-size: 1rem;
+    color: #000248;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: .2rem .5rem;
+    width: 100%;
+
+  }
+
+  .calendar{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+    font-family: 1rem;
+    color: #0e4e51;
+
+  }
+
+  .date-bx2 .datepicker{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    color: #000248;
+    text-align: left;
+    display: block !important;
+
+  }
+
+  .pickup-submit-btn{
+    position: relative;
+    width: 100%;
+    padding: .45rem .15rem;
+    text-align: center;
+    font-size: 1rem;
+    background-color: #2f7377;
+    border-radius: 5rem;
+    margin-top: 1rem;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+
+  .schedule-pickup-form-bx{
+    display: none;
+  }
+
+  .main-price-third-bx.mainpriceactive .schedule-pickup-form-bx{
+    display: flex;
+  }
+
+  .main-price-third-bx.mainpriceactive .schedule-pickup-bx{
+    display: none;
+  }
+
+  .bor-inpt{
+    border-radius: .3rem !important;
+  }
+
+  
+  .bor-inpt input ,  .bor-inpt select{
+    border-radius: .3rem !important;
+  }
+
+  .prod-list-main span{
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: #fff;
+  }
+
+  
+  .prod-list-main h4{
+    font-size: 2.3rem;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+
+  .left-prod-i{
+    display: flex;
+    align-items: center;
+    gap: .76rem;
+  }
+
+  .left-prod-i img{
+    width: 2rem;
+    height: auto;
+    filter: invert(100%);
+  }
+
+  

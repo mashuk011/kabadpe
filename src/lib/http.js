@@ -7,7 +7,9 @@ export const resolvePromise = (asyncFn) => {
           resolve({
             error: true,
             errors: e?.response?.data?.errors || [
-              { message: e?.message || "error in callling api" },
+              {
+                message: e?.message || `error in calling api ${asyncFn?.name}`,
+              },
             ],
           })
         );

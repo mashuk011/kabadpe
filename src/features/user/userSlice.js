@@ -25,6 +25,7 @@ const userSlice = createSlice({
     builder.addCase(userFetch.pending, (state, { payload }) => {
       state.loading = true;
       state.error = "";
+      state.userInfo = null;
     });
     builder.addCase(userFetch.fulfilled, (state, { payload: { data } }) => {
       state.loading = false;
@@ -35,6 +36,7 @@ const userSlice = createSlice({
       state.loading = false;
       state.error = payload;
       state.success = false;
+      state.userInfo = null;
     });
   },
 });
