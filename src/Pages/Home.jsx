@@ -205,11 +205,13 @@ const Home = () => {
                           <span>Kabad Shop</span>
                         </NavLink>
                       </li>
-                      <li>
-                        <NavLink to="/account current">
-                          <span>My Account</span>
-                        </NavLink>
-                      </li>
+                      <Protect>
+                        <li>
+                          <NavLink to="/account">
+                            <span>My Account</span>
+                          </NavLink>
+                        </li>
+                      </Protect>
                       <Protect reverse>
                         <li>
                           <button

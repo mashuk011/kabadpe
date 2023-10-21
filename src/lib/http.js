@@ -6,6 +6,10 @@ export const resolvePromise = (asyncFn) => {
         .catch((e) =>
           resolve({
             error: true,
+            message:
+              e?.response?.data?.errors?.[0]?.message ||
+              e?.message ||
+              `error in calling api ${asyncFn?.name}`,
             errors: e?.response?.data?.errors || [
               {
                 message: e?.message || `error in calling api ${asyncFn?.name}`,

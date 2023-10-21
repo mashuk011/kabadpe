@@ -142,7 +142,6 @@ const UserForm = ({ closepopUpUserForm }) => {
                     touched,
                     ...rest
                   }) => {
-                    console.log("errors", errors);
                     return (
                       <Form>
                         <div className="user-form-inpt-bx user-form-inpt-bx1 user-form-inpt-bx3">

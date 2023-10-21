@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Datepicker from "react-datepicker";
-// import "react-datepicker/dist/react-datepicker.css";
+import "react-datepicker/dist/react-datepicker.css";
 import "../style/Ratelist.css";
 import "../style/MyAccount.css";
+import { Form, Formik } from "formik";
+import { userSchedulePickup } from "../apis/kbadpeUser/schedule";
 
 const Ratelistcomp = () => {
   const [listBox, setListBox] = useState(false);
@@ -17,7 +19,10 @@ const Ratelistcomp = () => {
   const ShcedulPickuFunc = () => {
     setmainPrice(true);
   };
-
+  const handlePickupSubmit = async (data) => {
+    const res = await userSchedulePickup(data);
+    console.log(res);
+  };
   return (
     <>
       {/* <!-- Main header--> */}
@@ -725,69 +730,117 @@ const Ratelistcomp = () => {
 
                 <div className="schedule-pickup-form-bx">
                   <h5>Schedual Pickup</h5>
+                  <Formik
+                    initialValues={{
+                      appointmentAddress: "",
+                      appointmentContactNumber: "",
+                      appointmentPersonName: "",
+                      appointmentTimeSlot: "",
+                      appointmentDate: null,
+                    }}
+                    onSubmit={handlePickupSubmit}
+                  >
+                    {({
+                      handleBlur,
+                      handleChange,
+                      values,
+                      errors,
+                      touched,
+                      ...rest
+                    }) => {
+                      return (
+                        <Form>
+                          <div className="pickup-inpt-bx">
+                            <div className="sched-inpt bor-inpt">
+                              <input
+                                type="text"
+                                name="appointmentPersonName"
+                                id="name"
+                                placeholder="Name"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.appointmentPersonName}
+                              />
+                            </div>
+                          </div>
 
-                  <form action="#">
-                    <div className="pickup-inpt-bx">
-                      <div className="sched-inpt bor-inpt">
-                        <input
-                          type="text"
-                          name="name"
-                          id="name"
-                          placeholder="Name"
-                        />
-                      </div>
-                    </div>
+                          <div className="pickup-inpt-bx">
+                            <div className="sched-inpt bor-inpt">
+                              <input
+                                type="text"
+                                name="appointmentContactNumber"
+                                id="appointmentContactNumber"
+                                placeholder="Phone"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.appointmentContactNumber}
+                              />
+                            </div>
+                          </div>
 
-                    <div className="pickup-inpt-bx">
-                      <div className="sched-inpt bor-inpt">
-                        <input
-                          type="text"
-                          name="phone"
-                          id="phone"
-                          placeholder="Phone"
-                        />
-                      </div>
-                    </div>
+                          <div className="pickup-inpt-bx">
+                            <div className="date-bx2 bor-inpt">
+                              <i class="fa-solid fa-calendar-days calendar"></i>
+                              <Datepicker
+                                name="appointmentDate"
+                                id="appointmentDate"
+                                className="datepicker"
+                                selected={values.appointmentDate}
+                                onChange={(date) => {
+                                  values.appointmentDate = date;
+                                  document
+                                    .getElementById("appointmentContactNumber")
+                                    .focus();
+                                }}
+                                onBlur={handleBlur}
+                              />
+                            </div>
+                          </div>
 
-                    <div className="pickup-inpt-bx">
-                      <div className="date-bx2 bor-inpt">
-                        <i class="fa-solid fa-calendar-days calendar"></i>
-                        <Datepicker
-                          className="datepicker"
-                          selected={selectedDate}
-                          onChange={(date) => setSelectedDate(date)}
-                        />
-                      </div>
-                    </div>
+                          <div className="pickup-inpt-bx">
+                            <div className="sched-inpt sel-bx bor-inpt">
+                              <i class="fa-solid fa-angle-down arrow-dwn"></i>
+                              <select
+                                name="appointmentTimeSlot"
+                                id="appointmentTimeSlot"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.appointmentTimeSlot}
+                              >
+                                <option disabled value="" hidden>
+                                  Choose Time Slot
+                                </option>
+                                <option value="10-11">10.00 to 11.00</option>
+                                <option value="11-12">11.00 to 12.00</option>
+                                <option value="13-14">1.00 to 2.00</option>
+                                <option value="14-15">2.00 to 3.00</option>
+                                <option value="16-17">4.00 to 5.00</option>
+                                <option value="17-18">5.00 to 6.00</option>
+                              </select>
+                            </div>
+                          </div>
 
-                    <div className="pickup-inpt-bx">
-                      <div className="sched-inpt sel-bx bor-inpt">
-                        <i class="fa-solid fa-angle-down arrow-dwn"></i>
-                        <select name="time" id="time">
-                          <option value="time">Choose Time Slot</option>
-                          <option value="time">10.00 to 11.00</option>
-                          <option value="time">11.00 to 12.00</option>
-                          <option value="time">1.00 to 2.00</option>
-                          <option value="time">2.00 to 3.00</option>
-                          <option value="time">4.00 to 5.00</option>
-                          <option value="time">5.00 to 6.00</option>
-                        </select>
-                      </div>
-                    </div>
+                          <div className="pickup-inpt-bx">
+                            <div className="sched-inpt bor-inpt">
+                              <input
+                                type="text"
+                                name="appointmentAddress"
+                                id="address"
+                                placeholder="Address"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.appointmentAddress}
+                              />
+                            </div>
+                          </div>
 
-                    <div className="pickup-inpt-bx">
-                      <div className="sched-inpt bor-inpt">
-                        <input
-                          type="text"
-                          name="address"
-                          id="address"
-                          placeholder="Address"
-                        />
-                      </div>
-                    </div>
-
-                    <button className="pickup-submit-btn">Submit</button>
-                  </form>
+                          <button type="submit" className="pickup-submit-btn">
+                            Submit
+                          </button>
+                        </Form>
+                      );
+                    }}
+                  </Formik>
                 </div>
               </div>
             </div>
