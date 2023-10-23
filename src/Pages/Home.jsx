@@ -15,35 +15,35 @@ const Home = () => {
       {/* <!-- Main header--> */}
       <header className="main-header header-style-one">
         {/* <!--Start Header Top--> */}
-        <div class="header-top">
-          <div class="auto-container">
-            <div class="outer-box outer-box2">
-              <div class="t-headr-left-links-bx">
+        <div className="header-top">
+          <div className="auto-container">
+            <div className="outer-box outer-box2">
+              <div className="t-headr-left-links-bx">
                 <a href="#">
                   {" "}
-                  <i class="fa-solid fa-angles-right"></i> Climstripe Shift{" "}
+                  <i className="fa-solid fa-angles-right"></i> Climstripe Shift{" "}
                 </a>
-                <a href="#" class="linkactive">
-                  <i class="fa-solid fa-angles-right"></i> Kabadpe
+                <a href="#" className="linkactive">
+                  <i className="fa-solid fa-angles-right"></i> Kabadpe
                 </a>
                 <a href="#">
-                  <i class="fa-solid fa-angles-right"></i> Green Saman Shop{" "}
+                  <i className="fa-solid fa-angles-right"></i> Green Saman Shop{" "}
                 </a>
                 <a href="#">
                   {" "}
-                  <i class="fa-solid fa-angles-right"></i> Climconnect{" "}
+                  <i className="fa-solid fa-angles-right"></i> Climconnect{" "}
                 </a>
               </div>
 
-              <div class="header-top__left header-top_right">
-                <div class="header-contact-info-style1">
+              <div className="header-top__left header-top_right">
+                <div className="header-contact-info-style1">
                   <ul>
                     <li>
-                      <div class="icon">
+                      <div className="icon">
                         <img src="./images/customImg/game.png" />
                         <img src="./images/customImg/app-store.png" />
                       </div>
-                      <div class="text">
+                      <div className="text">
                         <p>Download App</p>
                       </div>
                     </li>

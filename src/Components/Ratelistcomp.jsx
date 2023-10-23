@@ -6,10 +6,13 @@ import "../style/Ratelist.css";
 import "../style/MyAccount.css";
 import { Form, Formik } from "formik";
 import { userSchedulePickup } from "../apis/kbadpeUser/schedule";
+import { validationSchedulePickup } from "../validators/kabadPeUser/schedule";
+import { userLocationByQuery } from "../apis/location";
 
 const Ratelistcomp = () => {
   const [listBox, setListBox] = useState(false);
   const [mainPrice, setmainPrice] = useState(false);
+  const [apiErrors, setApiErrors] = useState({ shcedulPickup: "" });
   const [selectedDate, setSelectedDate] = useState(null);
   const initialSchedulePickupValues = {
     appointmentAddress: "",
@@ -26,8 +29,26 @@ const Ratelistcomp = () => {
     setmainPrice(true);
   };
   const handlePickupSubmit = async (data) => {
-    const res = await userSchedulePickup(data);
-    console.log(res);
+    const appointmentAddress = await userLocationByQuery(
+      data?.appointmentAddress
+    );
+    if (!appointmentAddress?.coord_address) {
+      setApiErrors({
+        ...apiErrors,
+        shcedulPickup: appointmentAddress?.message || "address not found",
+      });
+      return;
+    }
+    const res = await userSchedulePickup({
+      ...data,
+      appointmentAddress: appointmentAddress?.coord_address,
+    });
+    if (res.error) {
+      setApiErrors({
+        ...apiErrors,
+        shcedulPickup: res.message,
+      });
+    }
   };
   return (
     <>
@@ -41,28 +62,28 @@ const Ratelistcomp = () => {
                 <div className="phone-number-box1">
                   <a className="" href="#">
                     {" "}
-                    <i class="fa-solid fa-angles-right"></i> Climstripe Shift
+                    <i className="fa-solid fa-angles-right"></i> Climstripe Shift
                   </a>
                 </div>
 
                 <div className="phone-number-box1">
                   <a className="active" href="index.html">
                     {" "}
-                    <i class="fa-solid fa-angles-right"></i> Kabadpe
+                    <i className="fa-solid fa-angles-right"></i> Kabadpe
                   </a>
                 </div>
 
                 <div className="phone-number-box1">
                   <a href="#">
                     {" "}
-                    <i class="fa-solid fa-angles-right"></i> Green Saman Shop
+                    <i className="fa-solid fa-angles-right"></i> Green Saman Shop
                   </a>
                 </div>
 
                 <div className="phone-number-box1">
                   <a href="#">
                     {" "}
-                    <i class="fa-solid fa-angles-right"></i> Climconnect
+                    <i className="fa-solid fa-angles-right"></i> Climconnect
                   </a>
                 </div>
               </div>
@@ -247,7 +268,7 @@ const Ratelistcomp = () => {
 
                       <li>
                         <NavLink
-                          to="javascript:void(0);" 
+                          to="javascript:void(0);"
                           data-toggle="modal"
                           data-target="#exampleModal"
                         >
@@ -739,6 +760,7 @@ const Ratelistcomp = () => {
                   <Formik
                     initialValues={initialSchedulePickupValues}
                     onSubmit={handlePickupSubmit}
+                    validationSchema={validationSchedulePickup}
                   >
                     {({
                       handleBlur,
@@ -762,6 +784,13 @@ const Ratelistcomp = () => {
                                 value={values.appointmentPersonName}
                               />
                             </div>
+
+                            {touched.appointmentPersonName &&
+                            errors.appointmentPersonName ? (
+                              <div style={{ color: "red" }}>
+                                {errors.appointmentPersonName}
+                              </div>
+                            ) : null}
                           </div>
 
                           <div className="pickup-inpt-bx">
@@ -776,11 +805,17 @@ const Ratelistcomp = () => {
                                 value={values.appointmentContactNumber}
                               />
                             </div>
+                            {touched.appointmentContactNumber &&
+                            errors.appointmentContactNumber ? (
+                              <div style={{ color: "red" }}>
+                                {errors.appointmentContactNumber}
+                              </div>
+                            ) : null}
                           </div>
 
                           <div className="pickup-inpt-bx">
                             <div className="date-bx2 bor-inpt">
-                              <i class="fa-solid fa-calendar-days calendar"></i>
+                              <i className="fa-solid fa-calendar-days calendar"></i>
                               <Datepicker
                                 name="appointmentDate"
                                 id="appointmentDate"
@@ -795,11 +830,17 @@ const Ratelistcomp = () => {
                                 onBlur={handleBlur}
                               />
                             </div>
+                            {touched.appointmentDate &&
+                            errors.appointmentDate ? (
+                              <div style={{ color: "red" }}>
+                                {errors.appointmentDate}
+                              </div>
+                            ) : null}
                           </div>
 
                           <div className="pickup-inpt-bx">
                             <div className="sched-inpt sel-bx bor-inpt">
-                              <i class="fa-solid fa-angle-down arrow-dwn"></i>
+                              <i className="fa-solid fa-angle-down arrow-dwn"></i>
                               <select
                                 name="appointmentTimeSlot"
                                 id="appointmentTimeSlot"
@@ -818,6 +859,12 @@ const Ratelistcomp = () => {
                                 <option value="17-18">5.00 to 6.00</option>
                               </select>
                             </div>
+                            {touched.appointmentTimeSlot &&
+                            errors.appointmentTimeSlot ? (
+                              <div style={{ color: "red" }}>
+                                {errors.appointmentTimeSlot}
+                              </div>
+                            ) : null}
                           </div>
 
                           <div className="pickup-inpt-bx">
@@ -832,11 +879,22 @@ const Ratelistcomp = () => {
                                 value={values.appointmentAddress}
                               />
                             </div>
+                            {touched.appointmentAddress &&
+                            errors.appointmentAddress ? (
+                              <div style={{ color: "red" }}>
+                                {errors.appointmentAddress}
+                              </div>
+                            ) : null}
                           </div>
 
                           <button type="submit" className="pickup-submit-btn">
                             Submit
                           </button>
+                          {apiErrors ? (
+                            <div style={{ color: "red" }}>
+                              {apiErrors.shcedulPickup}
+                            </div>
+                          ) : null}
                         </Form>
                       );
                     }}

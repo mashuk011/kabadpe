@@ -20,19 +20,19 @@ const Header = () => {
 
                         <div className="header-right header-left_btns-flex">
                             <div className="phone-number-box1">
-                                <a className="" href="#"> <i class="fa-solid fa-angles-right"></i> Climstripe Shift</a>
+                                <a className="" href="#"> <i className="fa-solid fa-angles-right"></i> Climstripe Shift</a>
                             </div>
 
                             <div className="phone-number-box1">
-                                <a className="active" href="index.html"> <i class="fa-solid fa-angles-right"></i> Kabadpe</a>
+                                <a className="active" href="index.html"> <i className="fa-solid fa-angles-right"></i> Kabadpe</a>
                             </div>
 
                             <div className="phone-number-box1">
-                                <a href="#"> <i class="fa-solid fa-angles-right"></i> Green Saman Shop</a>
+                                <a href="#"> <i className="fa-solid fa-angles-right"></i> Green Saman Shop</a>
                             </div>
 
                             <div className="phone-number-box1">
-                                <a href="#"> <i class="fa-solid fa-angles-right"></i> Climconnect</a>
+                                <a href="#"> <i className="fa-solid fa-angles-right"></i> Climconnect</a>
                             </div>
 
 

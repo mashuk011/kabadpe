@@ -100,28 +100,28 @@ const Pricelist = () => {
                 <div className="phone-number-box1">
                   <a className="" href="#">
                     {" "}
-                    <i class="fa-solid fa-angles-right"></i> Climstripe Shift
+                    <i className="fa-solid fa-angles-right"></i> Climstripe Shift
                   </a>
                 </div>
 
                 <div className="phone-number-box1">
                   <a className="active" href="index.html">
                     {" "}
-                    <i class="fa-solid fa-angles-right"></i> Kabadpe
+                    <i className="fa-solid fa-angles-right"></i> Kabadpe
                   </a>
                 </div>
 
                 <div className="phone-number-box1">
                   <a href="#">
                     {" "}
-                    <i class="fa-solid fa-angles-right"></i> Green Saman Shop
+                    <i className="fa-solid fa-angles-right"></i> Green Saman Shop
                   </a>
                 </div>
 
                 <div className="phone-number-box1">
                   <a href="#">
                     {" "}
-                    <i class="fa-solid fa-angles-right"></i> Climconnect
+                    <i className="fa-solid fa-angles-right"></i> Climconnect
                   </a>
                 </div>
               </div>
@@ -501,11 +501,11 @@ const Pricelist = () => {
                             onClick={addStaticRow}
                             className="add-btn table-btn"
                           >
-                            <i class="fa-solid fa-plus"></i>
+                            <i className="fa-solid fa-plus"></i>
                           </div>
 
                           <div onClick={deleteStaticRow} className="add-btn table-btn">
-                            <i class="fa-solid fa-minus"></i>
+                            <i className="fa-solid fa-minus"></i>
                           </div>
                         </div>
                       </td>
@@ -561,11 +561,11 @@ const Pricelist = () => {
                         <div className="add-remov-btn">
 
                             <div onClick={addStaticRow} className="add-btn table-btn">
-                            <i class="fa-solid fa-plus"></i>
+                            <i className="fa-solid fa-plus"></i>
                             </div>
             
                             <div className="add-btn table-btn">
-                            <i class="fa-solid fa-minus"></i>
+                            <i className="fa-solid fa-minus"></i>
                             </div>
                         </div>
                         
