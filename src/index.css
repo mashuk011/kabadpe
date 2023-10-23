@@ -4994,6 +4994,22 @@ css code */
   background-color: #fff;
 }
 
+.auto-container{
+  max-width: 80rem !important;
+  margin: 0 auto !important;
+  padding-left: 0 !important;
+  padding-right: 0  !important;
+}
+
+.main-logo-box{
+  width: 210px !important;
+    height: 94px !important;
+}
+
+.main-menu .navigation>li>a span{
+  padding: 8px 5px;
+}
+
 
 /*** 
 =============================================

@@ -1,6 +1,7 @@
 import React from 'react'
 import WasteCollector from '../Components/WasteCollector';
 import {NavLink} from 'react-router-dom';
+import UserProfile from '../Components/UserProfile';
 
 const WastecollectorPage = () => {
   return (
@@ -9,7 +10,40 @@ const WastecollectorPage = () => {
        <header className="main-header header-style-one">
 
 {/* <!--Start Header Top--> */}
+<div class="header-top">
+                <div class="auto-container">
+                    <div class="outer-box outer-box2">
+                        <div class="t-headr-left-links-bx">
 
+                            <a href="#"> <i class="fa-solid fa-angles-right"></i> Climstripe Shift </a>
+                            <a href="#" class="linkactive"><i class="fa-solid fa-angles-right"></i> Kabadpe</a>
+                            <a href="#"><i class="fa-solid fa-angles-right"></i> Green Saman Shop </a>
+                            <a href="#"> <i class="fa-solid fa-angles-right"></i> Climconnect </a>
+
+
+                        </div>
+
+                        <div class="header-top__left header-top_right">
+                            <div class="header-contact-info-style1">
+                                <ul>
+
+                                    <li>
+                                        <div class="icon">
+                                            <img src="./images/customImg/game.png"/>
+                                            <img src="./images/customImg/app-store.png"/>
+                                        </div>
+                                        <div class="text">
+                                            <p>Download App</p>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
 {/* <!--End Header Top--> */}
 
 {/* <!--Start Header--> */}
@@ -197,7 +231,8 @@ const WastecollectorPage = () => {
 {/* <!-- End Mobile Menu --> */}
 
 </header>
-      <WasteCollector />
+      {/* <WasteCollector />  */}
+      <UserProfile />
     </>
   )
 }

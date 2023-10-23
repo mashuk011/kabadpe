@@ -1,0 +1,87 @@
+
+/* _______________________________________
+ Our User Profile comp css code styling
+ ________________________ */
+
+ header{
+    z-index: 10000 !important;
+ }
+
+ .user-profile-side-nav-main{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 19rem;
+    height: 100vh;
+    background-color: #fff;
+    border: .1rem solid #eee;
+    padding: 2.45rem 2rem;
+    overflow-y: auto;
+ }
+
+ .user-profile-side-nav-main::-webkit-scrollbar{
+    width: .445rem;
+ }
+
+ .user-profile-side-nav-main::-webkit-scrollbar-track{
+    background-color: transparent;
+ }
+
+ .user-profile-side-nav-main::-webkit-scrollbar-thumb{
+    background-color: #eaebf8;
+    border-radius: 5rem;
+ }
+
+ .user-prof-main-bx{
+    margin-top: 8rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 3.5rem;
+ }
+
+ .user-profi-img{
+    position: relative;
+    width: 7rem;
+    padding-bottom: 1rem;
+ }
+
+ .user-profi-img img{
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+ }
+
+ .user-prof-main-bx h6{
+    font-size: 1.25rem;
+    color: #000248;
+    font-weight: 600;
+    letter-spacing: .56px;
+ }
+
+ .user-prof-menu-main-flex-bx{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+ }
+
+ .u-prf-bx{
+    position: relative;
+    width: 100%;
+    padding: .87rem .87rem;
+    gap: .76rem;
+    display: flex;
+    background-color: transparent;
+    border-radius: .87rem;
+    transition: 500ms ease;
+ }
+
+ .u-prf-bx:hover{
+    background-color: #f9f8f3;
+ }
+
+ /* f9f8f3 */
