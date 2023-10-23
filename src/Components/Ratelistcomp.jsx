@@ -11,7 +11,13 @@ const Ratelistcomp = () => {
   const [listBox, setListBox] = useState(false);
   const [mainPrice, setmainPrice] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
-
+  const initialSchedulePickupValues = {
+    appointmentAddress: "",
+    appointmentContactNumber: "",
+    appointmentPersonName: "",
+    appointmentTimeSlot: "",
+    appointmentDate: null,
+  };
   const hideFunc = () => {
     setListBox(true);
   };
@@ -93,7 +99,7 @@ const Ratelistcomp = () => {
                   <div className="main-logo-box">
                     <a href="index.html">
                       {/* <img src="assets/images/resources/logo.png" alt="Awesome Logo" title=""> */}
-                      <img src="./images/resources/logo.png" alt="" />
+                      <img src="/images/resources/logo.png" alt="" />
                     </a>
                   </div>
                 </div>
@@ -241,7 +247,7 @@ const Ratelistcomp = () => {
 
                       <li>
                         <NavLink
-                          to="javascript:void(0);"
+                          to="javascript:void(0);" 
                           data-toggle="modal"
                           data-target="#exampleModal"
                         >
@@ -731,13 +737,7 @@ const Ratelistcomp = () => {
                 <div className="schedule-pickup-form-bx">
                   <h5>Schedual Pickup</h5>
                   <Formik
-                    initialValues={{
-                      appointmentAddress: "",
-                      appointmentContactNumber: "",
-                      appointmentPersonName: "",
-                      appointmentTimeSlot: "",
-                      appointmentDate: null,
-                    }}
+                    initialValues={initialSchedulePickupValues}
                     onSubmit={handlePickupSubmit}
                   >
                     {({
