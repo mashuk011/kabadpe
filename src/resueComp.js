@@ -1,40 +1,4 @@
-import React, { useState } from 'react'
-import '../style/Profile.css';
-import UserProfGridComp from './UserProfGridComp';
-import UserProfForm from './UserProfForm';
-import SalesHistoryComp from './SalesHistoryComp';
-import AppointmentComp from './AppointmentComp';
-import Supportticket from './Supportticket';
-import UserOrders from './UserOrders';
-import { NavLink } from 'react-router-dom';
-
-const UserProfile = () => {
-  const [profBtn, setProfBtn] = useState(1);
-  const [selectedImage, setSelectedImage] = useState('./images/customImg/836.jpg');
-  const [profChange , setProfChange] = useState(false);
-  // const [userPrf, setUserPrf] = useState(false);
-
-  const filterTab = (index) => {
-
-    setProfBtn(index);
-    
-  }
-
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        setSelectedImage(event.target.result);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-  
-  return (
-    <>
-
-<header className="main-header header-style-one">
+{/* <header className="main-header header-style-one">
 
 
 <div class="header-top">
@@ -42,10 +6,10 @@ const UserProfile = () => {
                     <div class="outer-box outer-box2">
                         <div class="t-headr-left-links-bx">
 
-                            <a href="#">  Climstripe Shift </a>
-                            <a href="#" class="linkactive"> Kabadpe</a>
-                            <a href="#"> Green Saman Shop </a>
-                            <a href="#">  Climconnect </a>
+                            <a href="#"> <i class="fa-solid fa-angles-right"></i> Climstripe Shift </a>
+                            <a href="#" class="linkactive"><i class="fa-solid fa-angles-right"></i> Kabadpe</a>
+                            <a href="#"><i class="fa-solid fa-angles-right"></i> Green Saman Shop </a>
+                            <a href="#"> <i class="fa-solid fa-angles-right"></i> Climconnect </a>
 
 
                         </div>
@@ -220,145 +184,4 @@ const UserProfile = () => {
     </nav>
 </div>
 
-</header>
-
-    <div className="user-profile-side-nav-main">
-
-        <div className="user-prof-main-bx">
-
-            <div  className="user-profi-img ">
-                <img src="./images/customImg/test-img-1.jpg" alt="" />
-                <div onClick={() => setProfChange(true)} className="prof-edit-text-btn">
-                    Edit
-                </div>
-            </div>
-
-           
-
-            <h6>Alysia Darmott</h6>
-            <span className='em-text'>
-            <i class="fa-regular fa-envelope"></i>
-              User011@gmail.com</span>
-            <span className='num-text'>
-            <i class="fa-solid fa-mobile-screen"></i>
-              7008322134</span>
-
-            <div className="prog-edit-prof-flex-bx">
-
-            <div className="prog-bar-bx">
-                <span>Complete Your Profile</span>
-                <span className="prog-num">70%</span>
-            </div>
-
-            <div className="edit-prof-btn" title='edit profile'>
-              <i class="fa-solid fa-pen-to-square"></i>
-              </div>
-            </div>
-              
-            
-        </div>
-
-        <div className="user-prof-menu-main-flex-bx">
-
-        <button onClick={() => filterTab(1)} className={profBtn === 1 ? "u-prf-bx profactive" : "u-prf-bx"}>
-            <div className="u-prf-tab-icon">
-            <i class="fa-solid fa-chart-line"></i>
-                  </div>
-                Dashboard
-            </button>
-
-            <button onClick={() => filterTab(5)} className={profBtn === 7 ? "u-prf-bx profactive" : "u-prf-bx"}>
-            <div className="u-prf-tab-icon">
-            <i class="fa-solid fa-wallet"></i>
-                  </div>
-                  My Wallet 
-            </button>
-
-            <button  onClick={() => filterTab(2)} className={profBtn === 2 ? "u-prf-bx profactive" : "u-prf-bx"}>
-            <div className="u-prf-tab-icon">
-            <i class="fa-solid fa-user"></i>
-                  </div>
-                My Details
-            </button>
-
-
-            <button onClick={() => filterTab(3)} className={profBtn === 3 ? "u-prf-bx profactive" : "u-prf-bx"}>
-            <div className="u-prf-tab-icon">
-            <i class="fa-solid fa-file-pen"></i>
-                  </div>
-                My Appointments
-            </button>
-
-            <button onClick={() => filterTab(5)} className={profBtn === 5 ? "u-prf-bx profactive" : "u-prf-bx"}>
-            <div className="u-prf-tab-icon">
-            <i class="fa-solid fa-file-pen"></i>
-                  </div>
-                Refer and Earn
-            </button>
-
-            <button onClick={() => filterTab(4)} className={profBtn === 4 ? "u-prf-bx profactive" : "u-prf-bx"}>
-            <div className="u-prf-tab-icon">
-            <i class="fa-solid fa-recycle"></i>
-                  </div>
-                  My sales history
-            </button>
-
-            <button onClick={() => filterTab(9)} className={profBtn === 9 ? "u-prf-bx profactive" : "u-prf-bx"}>
-            <div className="u-prf-tab-icon">
-            <i class="fa-solid fa-cart-shopping"></i>
-                  </div>
-                  My Orders
-            </button>
-            
-          
-
-            <button onClick={() => filterTab(6)} className={profBtn === 6 ? "u-prf-bx profactive" : "u-prf-bx"}>
-            <div className="u-prf-tab-icon">
-            <i class="fa-solid fa-hands-holding-child"></i>
-                  </div>
-                  Support
-            </button>
-        </div>
-
-        <div className="profile-log-out-btn">
-        <i class="fa-solid fa-right-from-bracket"></i>
-        <span>Log Out</span>
-        </div>
-        
-    </div>
-
-    <div className={profChange ? "user-prof-change-popup-box prof-chang-popupactive" : "user-prof-change-popup-box"}>
-                <div className="user-prof-popup-bx">
-                  
-                    <div className="prof-chang-img">
-                    {selectedImage && (
-        <img src={selectedImage} alt="Selected" />
-      )}
-                    </div>
-
-                        <div className="prof-input-file-bx">
-                            <label htmlFor="prof_input">Update profile Image</label>
-                            <input type="file" accept='image/*' onChange={handleImageChange} id='prof_input' />
-                        </div>
-                    
-                    <div onClick={() => setProfChange(false)} className="prof-popup-close-btn">
-                    <i class="fa-solid fa-xmark"></i>
-                    </div>
-                </div>
-            </div>
-    
-
-   { profBtn === 1 ?  <UserProfGridComp/> : null};
-   { profBtn === 2 ?  <UserProfForm/> : null};
-   { profBtn === 4 ?  <SalesHistoryComp/> : null};
-   { profBtn === 3 ?  <AppointmentComp/> : null};
-   { profBtn === 6 ?  <Supportticket/> : null};
-   { profBtn === 9 ?  <UserOrders/> : null};
-
-   
-   
-    </>
-  )
-}
-
-export default UserProfile
+</header> */}

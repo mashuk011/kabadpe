@@ -10,7 +10,7 @@ import Account from "./Pages/Account";
 import WastecollectorPage from "./Pages/WastecollectorPage";
 import LogReg from "./Pages/LogReg";
 import ResetPassword from "./Pages/ResetPassword";
-// import RateList from "./Pages/RateList";
+import RateList from "./Pages/RateList";
 import PricelistPage from "./Pages/PricelistPage";
 import OtpVerify from "./Pages/OtpVerify";
 import { useEffect } from "react";
@@ -34,10 +34,10 @@ function App() {
       <Route path="/rate" element={<Rate />} />
       <Route path="/kabadshop" element={<KabadShop />} />
       <Route path="/account" element={<Account />} />
-      <Route path="/wastecollector" element={<WastecollectorPage />} />
+      <Route path="/useraccounts" element={<WastecollectorPage />} />
       <Route path="/auth/collector" element={<LogReg />} />
       <Route path="/resetpasswrd" element={<ResetPassword />} />
-      {/* <Route path="/ratelist" element={<RateList />} /> */}
+      <Route path="/ratelist" element={<RateList />} />
       <Route path="/pricelist" element={<PricelistPage />} />
       <Route path="/otpverify" element={<OtpVerify />} />
     </Routes>

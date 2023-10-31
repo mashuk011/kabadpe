@@ -4497,7 +4497,7 @@ Our contributon sec Css
 
 .t-headr-left-links-bx a:hover,
 .t-headr-left-links-bx a.linkactive {
-  color: #95c41f;
+  color: #2ac4c8;
 }
 
 .t-headr-left-links-bx a:before {
@@ -4518,6 +4518,7 @@ Our contributon sec Css
 
 .outer-box2 {
   padding-block: 0.25rem !important;
+  padding-inline: 1rem !important;
 }
 
 .header-top{
@@ -4745,7 +4746,7 @@ css code */
 }
 
 .auto-container{
-  max-width: 80rem !important;
+  max-width: 84rem !important;
   margin: 0 auto !important;
   padding-left: 0 !important;
   padding-right: 0  !important;
@@ -4759,6 +4760,8 @@ css code */
 .main-menu .navigation>li>a span{
   padding: 8px 5px;
 }
+
+
 
 /*** 
 =============================================
